@@ -1,0 +1,6 @@
+D:\CS-Studio2\TCPServer\Common\bin\Debug\Common.dll
+D:\CS-Studio2\TCPServer\Common\bin\Debug\Common.pdb
+D:\CS-Studio2\TCPServer\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\CS-Studio2\TCPServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\CS-Studio2\TCPServer\Common\obj\Debug\Common.dll
+D:\CS-Studio2\TCPServer\Common\obj\Debug\Common.pdb

@@ -1,0 +1,13 @@
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\MysqlDB.exe.config
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\MysqlDB.exe
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\MysqlDB.pdb
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\MySql.Data.dll
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\Google.Protobuf.dll
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\Renci.SshNet.dll
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\BouncyCastle.Crypto.dll
+D:\CS-Studio2\TCPServer\MysqlDB\bin\Debug\MySql.Data.xml
+D:\CS-Studio2\TCPServer\MysqlDB\obj\Debug\MysqlDB.csprojAssemblyReference.cache
+D:\CS-Studio2\TCPServer\MysqlDB\obj\Debug\MysqlDB.csproj.CoreCompileInputs.cache
+D:\CS-Studio2\TCPServer\MysqlDB\obj\Debug\MysqlDB.csproj.CopyComplete
+D:\CS-Studio2\TCPServer\MysqlDB\obj\Debug\MysqlDB.exe
+D:\CS-Studio2\TCPServer\MysqlDB\obj\Debug\MysqlDB.pdb

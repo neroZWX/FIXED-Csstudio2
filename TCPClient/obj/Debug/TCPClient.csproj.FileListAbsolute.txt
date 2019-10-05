@@ -1,0 +1,7 @@
+D:\CS-Studio2\TCPClient\bin\Debug\TCPClient.exe.config
+D:\CS-Studio2\TCPClient\bin\Debug\TCPClient.exe
+D:\CS-Studio2\TCPClient\bin\Debug\TCPClient.pdb
+D:\CS-Studio2\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+D:\CS-Studio2\TCPClient\obj\Debug\TCPClient.exe
+D:\CS-Studio2\TCPClient\obj\Debug\TCPClient.pdb
+D:\CS-Studio2\TCPClient\obj\Debug\TCPClient.csprojAssemblyReference.cache
