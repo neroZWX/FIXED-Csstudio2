@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MessagePanel : BasePanel
 {
     private Text text;
-    private float ShowTime = 3f;
+    private float ShowTime = 5f;
     public override void OnEnter()
     {
         base.OnEnter();
@@ -16,7 +16,8 @@ public class MessagePanel : BasePanel
 
     }
     public void ShowMessage(string msg) {
-        text.color = Color.white;
+        text.CrossFadeAlpha(1, 0.2f, false);
+        
         text.text = msg;
         text.enabled = true;
         //timer

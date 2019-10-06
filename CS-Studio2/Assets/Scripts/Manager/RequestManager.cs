@@ -12,21 +12,21 @@ public class RequestManager : BaseManager
 
 
     // save request code 
-    private Dictionary<Request, BaseRequest> requestDict = new Dictionary<Request, BaseRequest>();
+    private Dictionary<ActionCode, BaseRequest> requestDict = new Dictionary<ActionCode, BaseRequest>();
 
-    public void AddRequest(Request request, BaseRequest baserequest) {
-        requestDict.Add(request, baserequest);
+    public void AddRequest(ActionCode actionCode, BaseRequest baserequest) {
+        requestDict.Add( actionCode, baserequest);
     }
     // remove request code
-    public void RemoveRequest(Request request) {
-        requestDict.Remove(request);
+    public void RemoveRequest(ActionCode actionCode) {
+        requestDict.Remove(actionCode);
     }
 
     // reponse the server
-    public void HandleReponse(Request request,string data) {
-        BaseRequest baserequest = requestDict.TryGet<Request,BaseRequest>(request);
+    public void HandleReponse(ActionCode actionCode,string data) {
+        BaseRequest baserequest = requestDict.TryGet<ActionCode, BaseRequest>(actionCode);
         if (baserequest == null) {
-            Debug.LogWarning("Cannot get request code" + request);
+            Debug.LogWarning("Cannot get request code" + actionCode);
             return;
         }
         baserequest.OnResponse(data);

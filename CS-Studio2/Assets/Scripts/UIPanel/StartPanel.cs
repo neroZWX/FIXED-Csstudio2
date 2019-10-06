@@ -16,19 +16,21 @@ public class StartPanel : BasePanel
     }
     private void OnLoginClick() {
         uiMng.PushPanel(UIPanelType.Login);
+        
 
     }
-    //public override void OnPause()
-    //{
-    //    base.OnPause();
-    //    loginButton.transform.DOScale(0, 0.5f).OnComplete(() => loginButton.gameObject.SetActive(false));
+   //public override void OnPause()
+   // {
+   //     base.OnPause();
         
-    //}
-    //public override void OnResume()
-    //{
-    //    base.OnResume();
-    //    loginButton.gameObject.SetActive(true);
-    //    loginButton.transform.DOScale(1, 0.5f);
-    //}
+   //     loginButton.gameObject.SetActive(false);
+        
+   //}
+   public override void OnResume()
+    {
+        base.OnResume();
+        loginButton.gameObject.SetActive(true);
+        loginButton.transform.DOScale(1, 0.5f);
+    }
 
 }

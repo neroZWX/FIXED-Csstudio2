@@ -25,7 +25,7 @@ public class Message
         get { return data.Length - indexStart; }
     }
     // Parse the data from client
-    public void ReadMessag(int newDataAmount, Action<Request, string> processDataCallBack)
+    public void ReadMessag(int newDataAmount, Action<ActionCode, string> processDataCallBack)
     {
         indexStart += newDataAmount;
         while (true)
@@ -40,10 +40,10 @@ public class Message
                 //string s = Encoding.UTF8.GetString(data, 4, count);
                 //Console.WriteLine("Parse a data:" + s);
                 //pharse data
-                Request request = (Request)BitConverter.ToInt32(data, 4);
+                ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 4);
                // ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 4);
                 string s = Encoding.UTF8.GetString(data, 8, count - 4);
-                processDataCallBack(request, s);
+                processDataCallBack(actionCode, s);
 
                 Array.Copy(data, count + 4, data, 0, indexStart - 4 - count);
                 // after parse need to updata the indexstart
@@ -55,16 +55,16 @@ public class Message
             }
         }
     }
-    public static byte[] PackData(Request request, string data)
-    {
-        byte[] requestBytes = BitConverter.GetBytes((int)request);
-        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-        int dataAmount = requestBytes.Length + dataBytes.Length;
-        byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);
-        byte[] newBytes = dataAmountBytes.Concat(requestBytes).ToArray<byte>();//Concat(dataBytes);
-        return newBytes.Concat(dataBytes).ToArray<byte>();
+    //public static byte[] PackData(ActionCode actionCode, string data)
+    //{
+    //    byte[] requestBytes = BitConverter.GetBytes((int)actionCode);
+    //    byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+    //    int dataAmount = requestBytes.Length + dataBytes.Length;
+    //    byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);
+    //    byte[] newBytes = dataAmountBytes.Concat(requestBytes).ToArray<byte>();//Concat(dataBytes);
+    //    return newBytes.Concat(dataBytes).ToArray<byte>();
 
-    }
+    //}
     public static byte[] PackData(Request request, ActionCode actionCdoe, string data)
     {
         byte[] requestBytes = BitConverter.GetBytes((int)request);

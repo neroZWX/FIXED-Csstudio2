@@ -44,9 +44,9 @@ public class ClientManager : BaseManager
         }
         
     }
-    private void OnProcessDataCallBack(Request request, string data) {
+    private void OnProcessDataCallBack(ActionCode actionCode, string data) {
         //todo
-        gamefacde.HandleReponse(request, data);
+        gamefacde.HandleReponse(actionCode, data);
     }
     // Send message 
     // get data 

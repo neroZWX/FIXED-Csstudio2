@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class LoginPanel : BasePanel
 {
     public Button closeButton;
+    private InputField usernameIF;
+    private InputField passwordIF;
+   // public Button loginButton;
+    //public Button registerButton;
 
     public override void OnEnter()
     {
@@ -16,13 +20,38 @@ public class LoginPanel : BasePanel
         transform.localPosition = new Vector3(0, 1000, 0);
         transform.DOLocalMove(Vector3.zero, 0.5f);
 
+        usernameIF = transform.Find("UsernameLabel/UserNameInput").GetComponent<InputField>();
+        passwordIF = transform.Find("PasswordLabel/passwordInput").GetComponent<InputField>();
         closeButton = transform.Find("Close").GetComponent<Button>();
         closeButton.onClick.AddListener(OnCloseClick);
+        transform.Find("LoginButton").GetComponent<Button>().onClick.AddListener(OnLoginClick);
+        transform.Find("RegisterButton").GetComponent<Button>().onClick.AddListener(OnRegisterClick);
 
     }
     private void OnCloseClick() {
         transform.DOScale(0, 0.5f);
         Tweener tweener = transform.DOLocalMove(new Vector3(0,1000,0),0.5f);
         tweener.OnComplete(() => uiMng.PopPanel());
+        
+    }
+    private void OnLoginClick() {
+        string msg = "";
+        if (string.IsNullOrEmpty(usernameIF.text)) {
+            msg += "userName cannot be null";
+            //print("userName cannot be null");
+        }
+        if (string.IsNullOrEmpty(passwordIF.text))
+        {
+            msg += "password cannot be null";
+            //print("password cannot be null");
+        }
+        if (msg != "") {
+            uiMng.ShowMessage(msg);return;
+        }
+        //todo Sending message to server for check it
+    }
+    private void OnRegisterClick()
+    {
+
     }
 }
