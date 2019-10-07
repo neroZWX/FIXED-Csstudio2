@@ -9,9 +9,9 @@ namespace GameServer.Tool
 {
     class ConnHelper
     {
-        public const string ConnectionString = "datasouce= 127.0.0.1; port= 3306; database=cs-studio2; user=root;pwd= ";
+        public const string connectionstring = "datasource= 127.0.0.1; port= 3306; database=cs-studio2; user=root;pwd= ";
         public static MySqlConnection Connect() {
-            MySqlConnection conn = new MySqlConnection(ConnectionString);
+            MySqlConnection conn = new MySqlConnection(connectionstring);
             try
             {
                 conn.Open();

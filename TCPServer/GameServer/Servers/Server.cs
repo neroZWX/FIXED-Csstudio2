@@ -15,7 +15,7 @@ namespace GameServer.Servers
     {
         private IPEndPoint ipendpoint;
         private Socket ServerSocket;
-        private List<client> Clientlist;
+        private List<client> Clientlist = new List<client>();
         private ControllerManager controllerManager;
         public Server() {
 
@@ -37,9 +37,10 @@ namespace GameServer.Servers
         }
         private void AcceptCallBack(IAsyncResult ar) {
             Socket ClientSocket = ServerSocket.EndAccept(ar);
-            client client = new client(ClientSocket);
+            client client = new client(ClientSocket,this);
             client.Start();
             Clientlist.Add(client);
+            ServerSocket.BeginAccept(AcceptCallBack, null);
         }
         public void RemoveClient(client client) {
             lock (Clientlist)
@@ -48,9 +49,9 @@ namespace GameServer.Servers
             }
             
         }
-        public void SendResponse(client client, Request request, string data) {
+        public void SendResponse(client client, ActionCode actionCode, string data) {
             // response the client
-            client.Send(request, data);
+            client.Send(actionCode, data);
         }
         public void HandleRequest(Request request, ActionCode actioncode, string data, client client)
         {

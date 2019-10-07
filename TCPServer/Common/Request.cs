@@ -7,5 +7,6 @@ namespace Common
     public enum Request
     {
         None,
+        User,
     }
 }

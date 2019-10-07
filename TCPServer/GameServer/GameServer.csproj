@@ -50,6 +50,9 @@
     <Compile Include="Controller\baseController.cs" />
     <Compile Include="Controller\ControllerManager.cs" />
     <Compile Include="Controller\defaultController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servers\Client.cs" />
@@ -60,10 +63,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{fd9e4be1-653f-463e-aba3-5f94af5deb48}</Project>

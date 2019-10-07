@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5499361876021835031}
   - component: {fileID: 4182049917516505826}
   - component: {fileID: 6293413308065732159}
-  - component: {fileID: 4325152388528566462}
+  - component: {fileID: 4568877630086412397}
   m_Layer: 5
   m_Name: MessagePanel
   m_TagString: Untagged
@@ -59,18 +59,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.3812745, b: 0.3812745, a: 1}
+  m_Color: {r: 1, g: 0.1462264, b: 0.15467641, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ed16ca074b64c824bbc6902bbde357bb, type: 3}
-    m_FontSize: 53
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 65
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
---- !u!114 &4325152388528566462
+--- !u!114 &4568877630086412397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

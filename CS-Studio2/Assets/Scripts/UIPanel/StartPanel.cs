@@ -7,25 +7,31 @@ using DG.Tweening;
 public class StartPanel : BasePanel
 {
     private Button loginButton;
+    
     public override void OnEnter()
     {
         base.OnEnter();
-        Button loginButton = transform.Find("LoginButton").GetComponent<Button>();
+        loginButton = transform.Find("LoginButton").GetComponent<Button>();
+        
         loginButton.onClick.AddListener(OnLoginClick);
 
     }
     private void OnLoginClick() {
+       
+       
+       
         uiMng.PushPanel(UIPanelType.Login);
-        
+
+
 
     }
-   //public override void OnPause()
-   // {
-   //     base.OnPause();
-        
-   //     loginButton.gameObject.SetActive(false);
-        
-   //}
+   public override void OnPause()
+    {
+        base.OnPause();
+
+        loginButton.transform.DOScale(0, 0.3f).OnComplete(() => loginButton.gameObject.SetActive(false));
+
+    }
    public override void OnResume()
     {
         base.OnResume();

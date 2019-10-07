@@ -13,18 +13,28 @@ namespace GameServer.Servers
     class client
     {
         private Socket ClientSocket;
-        private Server server;
+        private Server server; 
         private Message msg = new Message();
-        private MySqlConnection mysqlConn;
-        public client(client client) {
+        public MySqlConnection mysqlConn;
+        public MySqlConnection MySQLConn
+        {
+            get { return mysqlConn; }
+        }
+        public client() {
 
         }
-        public client(Socket ClientSocket)
+        public client(Socket ClientSocket,Server server)
         {
             this.ClientSocket = ClientSocket;
             this.server = server;
             mysqlConn = ConnHelper.Connect();
         }
+
+        //public client(Socket clientSocket)
+        //{
+        //    ClientSocket = clientSocket;
+        //}
+
         public void Start()
         {
             ClientSocket.BeginReceive(msg.Data,msg.IndexStart,msg.RemainSize,SocketFlags.None,ReceiveCallback,null);
@@ -57,14 +67,14 @@ namespace GameServer.Servers
             server.HandleRequest(request, actioncode, data, this);
         }
         private void Close() {
-            ConnHelper.CloseConnection(mysqlConn);
+            ConnHelper.CloseConnection(MySQLConn);
             if (ClientSocket != null)
                 ClientSocket.Close();
             server.RemoveClient(this);
             
         }
-        public void Send(Request request, string data) {
-            byte[] bytes = Message.PackData(request, data);
+        public void Send(ActionCode actionCode, string data) {
+            byte[] bytes = Message.PackData(actionCode, data);
             ClientSocket.Send(bytes);
         }
     }

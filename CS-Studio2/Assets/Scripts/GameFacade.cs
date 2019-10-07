@@ -12,7 +12,7 @@ public class GameFacade : MonoBehaviour
     private Player player;
     private AudioManager audio;
     private CameraManager camera;
-    private ClientManager clinet;
+    private ClientManager clinetMng;
     private RequestManager requestMng;
     private void Awake()
     {
@@ -38,14 +38,14 @@ public class GameFacade : MonoBehaviour
         audio = new AudioManager(this);
         player = new Player(this);
         camera = new CameraManager(this);
-        clinet = new ClientManager(this);
+        clinetMng = new ClientManager(this);
         requestMng = new RequestManager(this);
 
         uiMng.OnInit();
         audio.OnInit();
         player.OnInit();
         camera.OnInit();
-        clinet.OnInit();
+        clinetMng.OnInit();
         requestMng.OnInit();
 
     }
@@ -55,7 +55,7 @@ public class GameFacade : MonoBehaviour
         audio.OnDestroy();
         player.OnDestroy();
         camera.OnDestroy();
-        clinet.OnDestroy();
+        clinetMng.OnDestroy();
         requestMng.OnDestroy();
     }
     private void OnDestroy()
@@ -73,5 +73,9 @@ public class GameFacade : MonoBehaviour
     }
     public void ShowMessage(string msg) {
         uiMng.ShowMessage(msg);
+    }
+    public void SendRequest(Request request, ActionCode actionCode, string data)
+    {
+        clinetMng.SendRequest(request, actionCode, data);
     }
 }

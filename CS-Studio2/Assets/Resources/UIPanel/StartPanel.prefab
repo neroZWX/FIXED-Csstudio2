@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5716180061681773214}
-  - component: {fileID: 4081160030556830358}
+  - component: {fileID: 9053592268598199236}
   m_Layer: 5
   m_Name: StartPanel
   m_TagString: Untagged
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4081160030556830358
+--- !u!114 &9053592268598199236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,7 +61,6 @@ GameObject:
   - component: {fileID: 5716180062790299359}
   - component: {fileID: 5716180062790299328}
   - component: {fileID: 5716180062790299329}
-  - component: {fileID: 5716180062790299358}
   m_Layer: 5
   m_Name: LoginButton
   m_TagString: Untagged
@@ -83,10 +82,10 @@ RectTransform:
   m_Father: {fileID: 5716180061681773214}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -57}
-  m_SizeDelta: {x: 350.4, y: 156.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -54.6, y: -49}
+  m_SizeDelta: {x: 685.2, y: 130.8}
   m_Pivot: {x: 0.5240344, y: 0.49999988}
 --- !u!222 &5716180062790299359
 CanvasRenderer:
@@ -171,22 +170,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &5716180062790299358
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5716180062790299331}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c7b25ec147923524dbfbe9003c02a4ab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

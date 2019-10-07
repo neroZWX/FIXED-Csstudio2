@@ -10,7 +10,7 @@ namespace GameServer.Controller
 {
     abstract class baseController
     {
-        Request request = Request.None;
+        protected Request request = Request.None;
         public Request Request {
             get { return request; }
         }

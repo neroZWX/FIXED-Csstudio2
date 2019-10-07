@@ -155,11 +155,19 @@ public class UIManager:BaseManager {
         this.msgPanel = msgPanel;
     }
     public void ShowMessage(string msg) {
-        if (msg == null) {
+        if (msgPanel == null) {
             Debug.Log("Cannot show the message, message is null");
             return;
         }
         msgPanel.ShowMessage(msg);
+    }
+    public void ShowMessageSync(string msg) {
+        if (msgPanel == null)
+        {
+            Debug.Log("Cannot show the message, message is null");
+            return;
+        }
+        msgPanel.ShowMessageSync(msg);
     }
 
     /// <summary>

@@ -421,7 +421,8 @@ GameObject:
   - component: {fileID: 8954230246196963843}
   - component: {fileID: 8954230246196963853}
   - component: {fileID: 8954230246196963842}
-  - component: {fileID: 5912375288709089471}
+  - component: {fileID: 1925924938217971602}
+  - component: {fileID: 744850922}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5912375288709089471
+--- !u!114 &1925924938217971602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,7 +502,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6c096b67901c04996fe3611eb40ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeButton: {fileID: 1699907611535575814}
+--- !u!114 &744850922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954230246196963840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548f1fb39444df84faa4523f4008e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8954230246379022201
 GameObject:
   m_ObjectHideFlags: 0

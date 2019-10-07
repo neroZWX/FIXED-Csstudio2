@@ -56,9 +56,9 @@ namespace GameServer.Servers
                 }
             }
         }
-        public static byte[] PackData(Request request, string data)
+        public static byte[] PackData(ActionCode actionCode, string data)
         {
-            byte[] requestBytes = BitConverter.GetBytes((int)request);
+            byte[] requestBytes = BitConverter.GetBytes((int)actionCode);
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
             int dataAmount = requestBytes.Length + dataBytes.Length;
             byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);
@@ -66,6 +66,9 @@ namespace GameServer.Servers
             return newBytes.Concat(dataBytes).ToArray<byte>();
 
         }
+
+       
+
         public static byte[] PackData(Request request, ActionCode actionCdoe,string data)
         {
             byte[] requestBytes = BitConverter.GetBytes((int)request);

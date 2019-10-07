@@ -7,6 +7,8 @@ namespace Common
 {
     public enum ActionCode
     {
-        None
+        None,
+        Login,
+        Register,
     }
 }

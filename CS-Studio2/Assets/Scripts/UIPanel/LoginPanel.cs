@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using Common;
 
 public class LoginPanel : BasePanel
 {
-    public Button closeButton;
+    private Button closeButton;
     private InputField usernameIF;
     private InputField passwordIF;
+    private LoginRequest loginRequest;
    // public Button loginButton;
     //public Button registerButton;
 
@@ -20,6 +22,7 @@ public class LoginPanel : BasePanel
         transform.localPosition = new Vector3(0, 1000, 0);
         transform.DOLocalMove(Vector3.zero, 0.5f);
 
+        loginRequest = GetComponent<LoginRequest>();
         usernameIF = transform.Find("UsernameLabel/UserNameInput").GetComponent<InputField>();
         passwordIF = transform.Find("PasswordLabel/passwordInput").GetComponent<InputField>();
         closeButton = transform.Find("Close").GetComponent<Button>();
@@ -38,17 +41,27 @@ public class LoginPanel : BasePanel
         string msg = "";
         if (string.IsNullOrEmpty(usernameIF.text)) {
             msg += "userName cannot be null";
-            //print("userName cannot be null");
+            print("userName cannot be null");
         }
         if (string.IsNullOrEmpty(passwordIF.text))
         {
             msg += "password cannot be null";
-            //print("password cannot be null");
+            print("password cannot be null");
         }
         if (msg != "") {
             uiMng.ShowMessage(msg);return;
         }
         //todo Sending message to server for check it
+        loginRequest.SendRequest(usernameIF.text, passwordIF.text);
+    }
+    public void OnLoginResponse(ReturnCode returnCode) {
+        if (returnCode == ReturnCode.Success)
+        {
+            //TODO
+        }
+        else {
+            uiMng.ShowMessageSync("Username or password is invaild, please try it again!");
+        }
     }
     private void OnRegisterClick()
     {

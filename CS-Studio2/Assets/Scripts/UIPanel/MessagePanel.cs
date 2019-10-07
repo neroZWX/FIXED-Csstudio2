@@ -7,6 +7,14 @@ public class MessagePanel : BasePanel
 {
     private Text text;
     private float ShowTime = 5f;
+    private string message = null;
+    private void Update()
+    {
+        if (message != null) {
+            ShowMessage(message);
+            message = null;
+        }
+    }
     public override void OnEnter()
     {
         base.OnEnter();
@@ -14,6 +22,9 @@ public class MessagePanel : BasePanel
         text.enabled = false;
         uiMng.InjectMsgPanel(this);
 
+    }
+    public void ShowMessageSync(string msg) {
+        message = msg;
     }
     public void ShowMessage(string msg) {
         text.CrossFadeAlpha(1, 0.2f, false);
