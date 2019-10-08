@@ -35,6 +35,7 @@ public class ClientManager : BaseManager
     // listen the server's send status
     private void ReceiveCallBakck(IAsyncResult ar) {
         try {
+            if (clientSocket == null || clientSocket.Connected == false) return;
             int count = clientSocket.EndReceive(ar);
             msg.ReadMessag(count,OnProcessDataCallBack);
             Start();

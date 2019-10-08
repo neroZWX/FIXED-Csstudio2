@@ -55,6 +55,7 @@ namespace GameServer.Servers
         }
         public void HandleRequest(Request request, ActionCode actioncode, string data, client client)
         {
+            Console.WriteLine("srv rec: " + actioncode.ToString());
             controllerManager.HandRequest(request, actioncode, data, client);
         }
     }

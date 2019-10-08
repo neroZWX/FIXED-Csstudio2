@@ -7,12 +7,16 @@ using Common;
 public class LoginRequest : BaseRequest
 {
     private LoginPanel loginPanel;
+    
     // Start is called before the first frame update
     public override void Awake()
     {
+        
         request = Request.User;
         actionCode = ActionCode.Login;
+        
         loginPanel = GetComponent<LoginPanel>();
+        
         base.Awake();
     }
     public void SendRequest(string username, string password) {
@@ -23,6 +27,9 @@ public class LoginRequest : BaseRequest
     public override void OnResponse(string data)
     {
         ReturnCode returnCode = (ReturnCode)int.Parse(data);
+       
         loginPanel.OnLoginResponse(returnCode);
+        
+       
     }
 }

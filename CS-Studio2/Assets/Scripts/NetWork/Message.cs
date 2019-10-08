@@ -41,7 +41,10 @@ public class Message
                 //Console.WriteLine("Parse a data:" + s);
                 //pharse data
                 ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 4);
-               // ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 4);
+
+                Debug.Log("ReadMessag: " + actionCode.ToString());
+
+                // ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 4);
                 string s = Encoding.UTF8.GetString(data, 8, count - 4);
                 processDataCallBack(actionCode, s);
 
@@ -69,6 +72,13 @@ public class Message
     {
         byte[] requestBytes = BitConverter.GetBytes((int)request);
         byte[] actionCodeBytes = BitConverter.GetBytes((int)actionCdoe);
+        StringBuilder sb = new StringBuilder();
+        sb.Append("actionCodeBytes: ");
+        foreach (var i in actionCodeBytes)
+        {
+            sb.Append(i + " ");
+        }
+        Debug.Log(sb.ToString());
         byte[] dataBytes = Encoding.UTF8.GetBytes(data);
         int dataAmount = requestBytes.Length + dataBytes.Length + actionCodeBytes.Length;
         byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);

@@ -38,7 +38,51 @@ namespace GameServer.DAO
             }
             return null;
             }
-    
+        //根据用户名来查找用户
+       
+        public bool GetUserByUsername(MySqlConnection conn, string username) {
+            MySqlDataReader reader = null;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("select*from user where username = @username", conn);
+                cmd.Parameters.AddWithValue("username", username);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                  
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Get Exception while Check user's infromation" + e);
+            }
+            finally
+            {
+                if (reader != null) reader.Close();
+            }
+            return false;
+        }
+        public void AddUser(MySqlConnection conn, string username, string password) {
+            
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("insert into user set username = @username , password = @password", conn);
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Get Exception while Add new User " + e);
+            }
+           
+        }
         }
     }
 

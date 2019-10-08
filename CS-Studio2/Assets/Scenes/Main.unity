@@ -73191,7 +73191,7 @@ PrefabInstance:
     - target: {fileID: 5716180061681773214, guid: bd64ab3594402f54bb276e1525802372,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.899994
+      value: -12.799988
       objectReference: {fileID: 0}
     - target: {fileID: 5716180061681773214, guid: bd64ab3594402f54bb276e1525802372,
         type: 3}
@@ -73201,7 +73201,7 @@ PrefabInstance:
     - target: {fileID: 5716180061681773214, guid: bd64ab3594402f54bb276e1525802372,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -742.2
+      value: -922.7
       objectReference: {fileID: 0}
     - target: {fileID: 5716180061681773214, guid: bd64ab3594402f54bb276e1525802372,
         type: 3}
@@ -73233,6 +73233,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5716180062790299330, guid: bd64ab3594402f54bb276e1525802372,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.769043
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd64ab3594402f54bb276e1525802372, type: 3}
 --- !u!1001 &8322363888013053732
@@ -73246,11 +73251,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RegisterPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8322363888308806226, guid: cf7d15c8959316b4faeed0e4eabd4117,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8322363888308806227, guid: cf7d15c8959316b4faeed0e4eabd4117,
         type: 3}
@@ -73356,11 +73356,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101601834583503785, guid: cf7d15c8959316b4faeed0e4eabd4117,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7d15c8959316b4faeed0e4eabd4117, type: 3}

@@ -42,7 +42,10 @@ namespace GameServer.Servers
                     //Console.WriteLine("Parse a data:" + s);
                     //pharse data
                     Request request = (Request)BitConverter.ToInt32(data, 4);
-                    ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 4);
+                    ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 8);
+
+                    Console.WriteLine("ReadMessag: " + actioncode.ToString());
+
                     string s = Encoding.UTF8.GetString(data, 12, count - 8);
                     processDataCallBack(request, actioncode, s);
 
@@ -59,6 +62,7 @@ namespace GameServer.Servers
         public static byte[] PackData(ActionCode actionCode, string data)
         {
             byte[] requestBytes = BitConverter.GetBytes((int)actionCode);
+            
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
             int dataAmount = requestBytes.Length + dataBytes.Length;
             byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);

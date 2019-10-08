@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 8954230246379022202}
   - component: {fileID: 8954230246379022203}
   m_Layer: 5
-  m_Name: RegisterButton
+  m_Name: RegisterButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -28,7 +28,7 @@ public class LoginPanel : BasePanel
         closeButton = transform.Find("Close").GetComponent<Button>();
         closeButton.onClick.AddListener(OnCloseClick);
         transform.Find("LoginButton").GetComponent<Button>().onClick.AddListener(OnLoginClick);
-        transform.Find("RegisterButton").GetComponent<Button>().onClick.AddListener(OnRegisterClick);
+        transform.Find("RegisterButton1").GetComponent<Button>().onClick.AddListener(OnRegisterClick);
 
     }
     private void OnCloseClick() {
@@ -65,6 +65,6 @@ public class LoginPanel : BasePanel
     }
     private void OnRegisterClick()
     {
-
+        uiMng.PushPanel(UIPanelType.Register);
     }
 }

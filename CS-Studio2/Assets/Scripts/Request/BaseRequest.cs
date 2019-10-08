@@ -7,6 +7,8 @@ public class BaseRequest : MonoBehaviour
 {
     protected Request request = Request.None;
     protected ActionCode actionCode = ActionCode.None;
+    
+
     protected GameFacade _facade;
 
     protected GameFacade facade
@@ -27,6 +29,7 @@ public class BaseRequest : MonoBehaviour
         
     }
     protected void SendRequest(string data) {
+        Debug.Log("SendRequest: " + actionCode.ToString());
         facade.SendRequest(request, actionCode, data);
     }
     public virtual void SendRequest() { }
