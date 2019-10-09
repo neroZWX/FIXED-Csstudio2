@@ -32,12 +32,14 @@ public class LoginPanel : BasePanel
 
     }
     private void OnCloseClick() {
+        PlayClickSound();
         transform.DOScale(0, 0.5f);
         Tweener tweener = transform.DOLocalMove(new Vector3(0,1000,0),0.5f);
         tweener.OnComplete(() => uiMng.PopPanel());
         
     }
     private void OnLoginClick() {
+        PlayClickSound();
         string msg = "";
         if (string.IsNullOrEmpty(usernameIF.text)) {
             msg += "userName cannot be null";
@@ -58,6 +60,8 @@ public class LoginPanel : BasePanel
         if (returnCode == ReturnCode.Success)
         {
             //TODO
+            uiMng.PushPanelSync(UIPanelType.RoomList);
+            print("Lol");
         }
         else {
             uiMng.ShowMessageSync("Username or password is invaild, please try it again!");
@@ -65,6 +69,7 @@ public class LoginPanel : BasePanel
     }
     private void OnRegisterClick()
     {
+        PlayClickSound();
         uiMng.PushPanel(UIPanelType.Register);
     }
 }

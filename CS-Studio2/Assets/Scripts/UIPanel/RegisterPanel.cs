@@ -33,6 +33,7 @@ public class RegisterPanel : BasePanel
     }
     public void OnRegisterClick()
     {
+        PlayClickSound();
         string msg = "";
         if (string.IsNullOrEmpty(usernameIF.text)) {
             msg += "please enter your username!";
@@ -63,6 +64,7 @@ public class RegisterPanel : BasePanel
         }
     }
     public void OnCloseClick() {
+        PlayClickSound();
         transform.DOScale(0, 0.5f);
         Tweener tweener = transform.DOLocalMove(new Vector3(0, 1000, 0), 0.5f);
         tweener.OnComplete(() => uiMng.PopPanel());

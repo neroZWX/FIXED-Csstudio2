@@ -17,9 +17,9 @@ public class StartPanel : BasePanel
 
     }
     private void OnLoginClick() {
-       
-       
-       
+
+        PlayClickSound();
+
         uiMng.PushPanel(UIPanelType.Login);
 
 

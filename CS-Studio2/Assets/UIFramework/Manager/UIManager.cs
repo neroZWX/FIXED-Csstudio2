@@ -16,6 +16,14 @@ public class UIManager:BaseManager {
        
         PushPanel(UIPanelType.Start);
     }
+    public override void Update()
+    {
+        if (panelTypeToPush != UIPanelType.None) {
+            PushPanel(panelTypeToPush);
+            panelTypeToPush = UIPanelType.None;
+
+        }
+    }
 
     /// 
     /// 单例模式的核心
@@ -52,6 +60,13 @@ public class UIManager:BaseManager {
     private Dictionary<UIPanelType, BasePanel> panelDict;//保存所有实例化面板的游戏物体身上的BasePanel组件
     private Stack<BasePanel> panelStack;
     private MessagePanel msgPanel;
+    private UIPanelType panelTypeToPush = UIPanelType.None;
+
+    public void PushPanelSync(UIPanelType panelType)
+    {
+        panelTypeToPush = panelType;
+
+    }
 
 
     
@@ -122,6 +137,7 @@ public class UIManager:BaseManager {
             GameObject instPanel = GameObject.Instantiate(Resources.Load(path)) as GameObject;
             instPanel.transform.SetParent(CanvasTransform,false);
             instPanel.GetComponent<BasePanel>().uimng = this;
+            instPanel.GetComponent<BasePanel>().Facade = gamefacde;
             panelDict.Add(panelType, instPanel.GetComponent<BasePanel>());
             return instPanel.GetComponent<BasePanel>();
         }

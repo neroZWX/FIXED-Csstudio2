@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\UIPanel\LoginPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\MessagePanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\RegisterPanel.cs" />
+    <Compile Include="Assets\Scripts\UIPanel\RoomListPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\StartPanel.cs" />
     <Compile Include="Assets\UIFramework\Extension\DictionaryExtension.cs" />
     <Compile Include="Assets\UIFramework\Manager\GameRoot.cs" />
