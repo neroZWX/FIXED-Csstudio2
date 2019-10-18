@@ -18,10 +18,8 @@ namespace GameServer.DAO
                 cmd.Parameters.AddWithValue("username", username);
                 cmd.Parameters.AddWithValue("password", password);
                 reader = cmd.ExecuteReader();
-                Console.WriteLine("asddasdsaas");
                 if (reader.Read())
                 {
-                    Console.WriteLine("ooga booga");
                     int id = reader.GetInt32("id");
                     User user = new User(id, username, password);
                     return user;
