@@ -46,9 +46,8 @@ ehthumbs.db
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
 
-# Custom
+# TCPServer
 TCPServer/.vs/
-TCPClient/vs/
 TCPServer/GameServer/bin/
 TCPServer/GameServer/obj/
 TCPServer/Common/bin/
@@ -57,3 +56,8 @@ TCPServer/MysqlDB/bin/
 TCPServer/MysqlDB/obj/
 TCPServer/TCPServer/bin/
 TCPServer/TCPServer/obj/
+
+# TCPClient
+TCPClient/.vs/
+TCPClient/bin/
+TCPClient/obj/
