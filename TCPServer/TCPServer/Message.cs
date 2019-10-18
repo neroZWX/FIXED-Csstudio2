@@ -11,10 +11,10 @@ namespace TCPServer
         private byte[] data = new byte[1024];
         // save current how many bytes data
         private int indexStart = 0;
-        //public void AddCount(int count)
-        //{
-        //    indexStart += count;
-        //}
+        public void AddCount(int count)
+        {
+            indexStart += count;
+        }
         public byte[] Data
         {
             get { return data; }
@@ -28,10 +28,10 @@ namespace TCPServer
             get { return data.Length - indexStart; }
         }
         // Parse the data from client
-        public void ReadMessag(int newDataAmount)
+        public void ReadMessag()
         {
 
-            indexStart += newDataAmount;
+            //indexStart += newDataAmount;
             while (true)
             {
                 if (indexStart <= 4)

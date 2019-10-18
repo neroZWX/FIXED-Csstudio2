@@ -10,7 +10,7 @@ namespace GameServer.Model
     {
         public User(int id, string username, string password) {
              this.id = id;
-             this.Username = Username;
+             this.Username = username;
              this.Password = password;
         } 
         public int id { get; set; } 

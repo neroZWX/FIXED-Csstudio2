@@ -29,8 +29,10 @@ namespace GameServer.Controller
             else
             {
                 Result res = resultDAO.GetResultByUserid(client.mysqlConn, user.id);
-               return  
-               string.Format("{0},{1},{2},{3}", ((int)ReturnCode.Success).ToString(),user.Username,res.TotalCount,res.WinCount);
+                Console.WriteLine("server crap: " + ((int)ReturnCode.Success).ToString() + ", " + user.Username + ", " + res.TotalCount + ", " + res.WinCount);
+                var rrr = string.Format("{0},{1},{2},{3}", ((int)ReturnCode.Success).ToString(), user.Username, res.TotalCount, res.WinCount);
+                Console.WriteLine(rrr);
+                return rrr;
                 
             }           
         }
