@@ -21,13 +21,13 @@ public class LoginRequest : BaseRequest
     }
     public void SendRequest(string username, string password) {
         string data = username + "," + password;
+        print("loginpanel: " + data);
         base.SendRequest(data);
 
     }
-    public override void OnResponse(string data)
-    {
-        ReturnCode returnCode = (ReturnCode)int.Parse(data);
-       
+    public override void OnResponse(string data) { 
+    
+        ReturnCode returnCode = (ReturnCode)int.Parse(data[0].ToString());
         loginPanel.OnLoginResponse(returnCode);
         
        
