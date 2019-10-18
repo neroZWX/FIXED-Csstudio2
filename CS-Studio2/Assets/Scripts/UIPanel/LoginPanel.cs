@@ -11,17 +11,10 @@ public class LoginPanel : BasePanel
     private InputField usernameIF;
     private InputField passwordIF;
     private LoginRequest loginRequest;
-   // public Button loginButton;
+    // public Button loginButton;
     //public Button registerButton;
 
-    public override void OnEnter()
-    {
-        base.OnEnter();
-        transform.localScale = Vector3.zero;
-        transform.DOScale(1, 0.5f);
-        transform.localPosition = new Vector3(0, 1000, 0);
-        transform.DOLocalMove(Vector3.zero, 0.5f);
-
+    public void Start() {
         loginRequest = GetComponent<LoginRequest>();
         usernameIF = transform.Find("UsernameLabel/UserNameInput").GetComponent<InputField>();
         passwordIF = transform.Find("PasswordLabel/passwordInput").GetComponent<InputField>();
@@ -29,13 +22,28 @@ public class LoginPanel : BasePanel
         closeButton.onClick.AddListener(OnCloseClick);
         transform.Find("LoginButton").GetComponent<Button>().onClick.AddListener(OnLoginClick);
         transform.Find("RegisterButton1").GetComponent<Button>().onClick.AddListener(OnRegisterClick);
+    }
+    public override void OnEnter()
+    {
+        base.OnEnter();
+        PlayAnmi();
+    }
+    public override void OnPause()
+    {
+        HideAnmi();
 
+    }
+    public override void OnResume()
+    {
+        PlayAnmi();
+    }
+    public override void OnExit()
+    {
+        HideAnmi();
     }
     private void OnCloseClick() {
         PlayClickSound();
-        transform.DOScale(0, 0.5f);
-        Tweener tweener = transform.DOLocalMove(new Vector3(0,1000,0),0.5f);
-        tweener.OnComplete(() => uiMng.PopPanel());
+        uiMng.PopPanel();
         
     }
     private void OnLoginClick() {
@@ -71,5 +79,17 @@ public class LoginPanel : BasePanel
     {
         PlayClickSound();
         uiMng.PushPanel(UIPanelType.Register);
+    }
+    private void PlayAnmi() {
+        gameObject.SetActive(true);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1, 0.5f);
+        transform.localPosition = new Vector3(0, 1000, 0);
+        transform.DOLocalMove(Vector3.zero, 0.5f);
+    }
+    private void HideAnmi() {
+        transform.DOScale(0, 0.5f);
+        Tweener tweener = transform.DOLocalMove(new Vector3(0, 1000, 0), 0.5f);
+        tweener.OnComplete(() => gameObject.SetActive(false));
     }
 }
