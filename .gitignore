@@ -51,3 +51,9 @@ TCPServer/.vs/
 TCPClient/vs/
 TCPServer/GameServer/bin/
 TCPServer/GameServer/obj/
+TCPServer/Common/bin/
+TCPServer/Common/obj/
+TCPServer/MysqlDB/bin/
+TCPServer/MysqlDB/obj/
+TCPServer/TCPServer/bin/
+TCPServer/TCPServer/obj/
