@@ -1,4 +1,18 @@
 .git/
+
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+/[Bb]uilds/
+/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+/Assets/AssetStoreTools*
+*.apk
+*.unitypackage
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -31,19 +45,3 @@ ehthumbs.db
 [Dd]esktop.ini
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
-
-# TCPServer
-TCPServer/.vs/
-TCPServer/GameServer/bin/
-TCPServer/GameServer/obj/
-TCPServer/Common/bin/
-TCPServer/Common/obj/
-TCPServer/MysqlDB/bin/
-TCPServer/MysqlDB/obj/
-TCPServer/TCPServer/bin/
-TCPServer/TCPServer/obj/
-
-# TCPClient
-TCPClient/.vs/
-TCPClient/bin/
-TCPClient/obj/
