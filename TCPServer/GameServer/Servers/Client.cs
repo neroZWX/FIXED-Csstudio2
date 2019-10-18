@@ -37,6 +37,7 @@ namespace GameServer.Servers
 
         public void Start()
         {
+            if (ClientSocket == null || ClientSocket.Connected == false) return;
             ClientSocket.BeginReceive(msg.Data,msg.IndexStart,msg.RemainSize,SocketFlags.None,ReceiveCallback,null);
 
         }

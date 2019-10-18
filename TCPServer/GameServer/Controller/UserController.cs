@@ -13,6 +13,7 @@ namespace GameServer.Controller
 {
     class UserController:baseController    {
         private UserDAO userDAO = new UserDAO();
+        private ResultDAO resultDAO = new ResultDAO();
         public UserController() {
             request = Request.User;
    
@@ -27,7 +28,10 @@ namespace GameServer.Controller
             }
             else
             {
-                return ((int)ReturnCode.Success).ToString();
+                Result res = resultDAO.GetResultByUserid(client.mysqlConn, user.id);
+               return  
+               string.Format("{0},{1},{2},{3}", ((int)ReturnCode.Success).ToString(),user.Username,res.TotalCount,res.WinCount);
+                
             }           
         }
         public string Register(string data, client client, Server server)
