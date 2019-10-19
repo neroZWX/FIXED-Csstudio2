@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,8 +18,15 @@ public class RoomListPanel : BasePanel
         roomLayout = transform.Find("RoomList/ScrollRect/Layout").GetComponent<VerticalLayoutGroup>();
         roomItemPrefab = Resources.Load("UIPanel/RoomList") as GameObject;
         transform.Find("RoomList/Close").GetComponent<Button>().onClick.AddListener(OnCloseClick);
-       
+        transform.Find("RoomList/Create").GetComponent<Button>().onClick.AddListener(OnCreateClick);
+
     }
+
+    private void OnCreateClick()
+    {
+        uiMng.PushPanel(UIPanelType.Room);
+    }
+
     public override void OnEnter()
     {
         gameObject.SetActive(true);
@@ -28,6 +36,10 @@ public class RoomListPanel : BasePanel
     public override void OnExit()
     {
        
+    }
+    public override void OnPause()
+    {
+        
     }
     private void OnCloseClick() {
 
@@ -52,10 +64,6 @@ public class RoomListPanel : BasePanel
         roomLayout.GetComponent<RectTransform>().sizeDelta =
         new Vector2(size.x, roomCount * (roomItemPrefab.GetComponent<RectTransform>().sizeDelta.y+roomLayout.spacing));
     }
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) {
-            LoadRoomItem(1);
-        }
+    
     }
-}
+

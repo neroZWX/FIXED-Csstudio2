@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RoomItem : MonoBehaviour
 {
-    public Text userName;
+    public Text username;
     public Text totalCount;
     public Text winCount;
     public Button joinButton;
@@ -18,14 +18,14 @@ public class RoomItem : MonoBehaviour
     }
     public void SetRoomInfo( string username, int totalCount, int winCount) {
 
-        this.userName.text = username;
+        this.username.text = username;
         this.totalCount.text = "TotalMatch\n"+totalCount;
         this.winCount.text = "WinMatch\n"+ winCount;
     }
     public void SetRoomInfo(string username, string totalCount, string winCount)
     {
 
-        this.userName.text = username;
+        this.username.text = username;
         this.totalCount.text = "TotalMatch\n" + totalCount;
         this.winCount.text = "WinMatch\n" + winCount;
     }

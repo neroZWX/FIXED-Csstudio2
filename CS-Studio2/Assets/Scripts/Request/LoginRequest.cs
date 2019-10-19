@@ -24,15 +24,15 @@ public class LoginRequest : BaseRequest
         base.SendRequest(data);
 
     }
-    public override void OnResponse(string data) { 
-    
-        ReturnCode returnCode = (ReturnCode)int.Parse(data[0].ToString());
+    public override void OnResponse(string data) {
+        string [] strs =data. Split(',');
+        ReturnCode returnCode = (ReturnCode)int.Parse(strs[0]);
         loginPanel.OnLoginResponse(returnCode);
         //登入成功把信息把玩家信息设置到Player中
         if (returnCode == ReturnCode.Success) {
-            string username = data[1].ToString();
-            int totalCount = int.Parse(data[2].ToString());
-            int winCount = int.Parse(data[3].ToString());
+            string username = strs[1];
+            int totalCount = int.Parse(strs[2]);
+            int winCount = int.Parse(strs[3]);
             UserData ud = new UserData(username, totalCount, winCount);
             facade.SetUserData(ud);
         }

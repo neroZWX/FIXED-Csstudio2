@@ -16,6 +16,7 @@ namespace GameServer.Servers
         private IPEndPoint ipendpoint;
         private Socket ServerSocket;
         private List<client> Clientlist = new List<client>();
+        private List<Room> roomlist = new List<Room>();
         private ControllerManager controllerManager;
         public Server() {
 

@@ -62,7 +62,7 @@ public class GameFacade : MonoBehaviour
     {
         DestroyManager();
     }
-    public void UpdateManager() {
+    private void UpdateManager() {
         uiMng.Update();
         audio.Update();
         player.Update();
