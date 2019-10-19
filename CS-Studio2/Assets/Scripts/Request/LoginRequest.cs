@@ -28,6 +28,14 @@ public class LoginRequest : BaseRequest
     
         ReturnCode returnCode = (ReturnCode)int.Parse(data[0].ToString());
         loginPanel.OnLoginResponse(returnCode);
+        //登入成功把信息把玩家信息设置到Player中
+        if (returnCode == ReturnCode.Success) {
+            string username = data[1].ToString();
+            int totalCount = int.Parse(data[2].ToString());
+            int winCount = int.Parse(data[3].ToString());
+            UserData ud = new UserData(username, totalCount, winCount);
+            facade.SetUserData(ud);
+        }
         
        
     }

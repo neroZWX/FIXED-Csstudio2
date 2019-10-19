@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BasePanel : MonoBehaviour {
     protected UIManager uiMng;
-    private GameFacade facade;
+    protected GameFacade facade;
     public UIManager uimng {
         set { uiMng = value; }
     }

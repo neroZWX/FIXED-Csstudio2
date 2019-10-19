@@ -7,7 +7,7 @@ public class GameFacade : MonoBehaviour
 {
     private static GameFacade _instance;
     public static GameFacade Instance { get { return _instance; } }
-    
+
     private UIManager uiMng;
     private Player player;
     private AudioManager audio;
@@ -17,7 +17,7 @@ public class GameFacade : MonoBehaviour
     private void Awake()
     {
         if (_instance != null) {
-            Destroy(this.gameObject);return;
+            Destroy(this.gameObject); return;
         }
         _instance = this;
     }
@@ -34,7 +34,7 @@ public class GameFacade : MonoBehaviour
     }
     private void InitManager()
     {
-        uiMng= new UIManager(this);
+        uiMng = new UIManager(this);
         audio = new AudioManager(this);
         player = new Player(this);
         camera = new CameraManager(this);
@@ -94,7 +94,13 @@ public class GameFacade : MonoBehaviour
     }
     //AudioSource audioSource;
     public void PlayNormalSound(string soundName) {
-        
+
         audio.PlayNormalSound(soundName);
     }
+    public void SetUserData(UserData ud) {
+        player.UserData = ud;
+    }
+    public UserData GetUserData (){
+        return player.UserData;
+}
 }
