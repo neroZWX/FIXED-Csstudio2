@@ -27,6 +27,7 @@ public class BaseRequest : MonoBehaviour
         facade.AddRequest(actionCode, this);
         
         
+        
     }
     protected void SendRequest(string data) {
         Debug.Log("SendRequest: " + actionCode.ToString());

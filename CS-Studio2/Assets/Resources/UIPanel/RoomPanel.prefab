@@ -337,10 +337,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ed16ca074b64c824bbc6902bbde357bb, type: 3}
-    m_FontSize: 45
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -513,6 +513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6233966220159125048}
   - component: {fileID: 7430776558462381447}
+  - component: {fileID: 571202411467206766}
   m_Layer: 5
   m_Name: RoomPanel
   m_TagString: Untagged
@@ -553,6 +554,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55575b8f976acf479ed38007b21b27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &571202411467206766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233966220159125031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9303e90f097ed04aa7db523a769ab41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6233966220843345553
@@ -801,7 +814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3518651705031993541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -849,7 +862,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ed16ca074b64c824bbc6902bbde357bb, type: 3}
-    m_FontSize: 45
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -859,7 +872,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.01
   m_Text: Win:0
 --- !u!1 &6900906146357460340
 GameObject:

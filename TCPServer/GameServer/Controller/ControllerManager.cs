@@ -23,10 +23,11 @@ namespace GameServer.Controller
             defaultController defaultController = new defaultController();
             controllerDict.Add(defaultController.Request, defaultController);
             controllerDict.Add(Request.User, new UserController());
+            controllerDict.Add(Request.Room, new RoomController());
 
 
         }
-        public void HandRequest(Request request, ActionCode actionCode, string data, client client) {
+        public void HandRequest(Request request, ActionCode actionCode, string data, Client client) {
             baseController controller;
             bool isGet = controllerDict.TryGetValue(request, out controller);
             if (isGet == false) {

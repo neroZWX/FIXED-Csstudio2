@@ -7,33 +7,46 @@ using System.Net.Sockets;
 using Common;
 using MySql.Data.MySqlClient;
 using GameServer.Tool;
+using GameServer.Model;
 
 namespace GameServer.Servers
 {
-    class client
+    class Client
     {
         private Socket ClientSocket;
         private Server server; 
         private Message msg = new Message();
         public MySqlConnection mysqlConn;
+        private User user;
+        private Result result;
+
+
         public MySqlConnection MySQLConn
         {
             get { return mysqlConn; }
         }
-        public client() {
+        public void SetUserData(User user, Result result) {
+            this.user = user;
+            this.result = result;
+        }
+        public string GetUserData() {
+            return user.Username + "," + result.TotalCount + "," + result.WinCount;
+        }
+      
+        public Client() {
 
         }
-        public client(Socket ClientSocket,Server server)
+        public Client(Socket ClientSocket,Server server)
         {
             this.ClientSocket = ClientSocket;
             this.server = server;
             mysqlConn = ConnHelper.Connect();
         }
 
-        //public client(Socket clientSocket)
-        //{
-        //    ClientSocket = clientSocket;
-        //}
+        public Client(Socket clientSocket)
+        {
+            ClientSocket = clientSocket;
+        }
 
         public void Start()
         {
@@ -46,6 +59,7 @@ namespace GameServer.Servers
         {
             try
             {
+                if (ClientSocket == null || ClientSocket.Connected == false) return;
                 int count = ClientSocket.EndReceive(ar);
                 if (count == 0)
                 {

@@ -3467,47 +3467,12 @@ PrefabInstance:
     - target: {fileID: 6788466796362461062, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6788466796362461062, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9910877
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.51372707
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 417.44614
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 883.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 19.286194
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.51169235
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997480, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.97916967
-      objectReference: {fileID: 0}
-    - target: {fileID: 6788466796231997481, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: 0.9910876
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 272c4c0e4d1acdf4289bf1a1e8a5b07f, type: 3}
@@ -64243,11 +64208,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoginPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954230246196963840, guid: fc9bba64e84c23a419c4b87e407db5e1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954230246196963843, guid: fc9bba64e84c23a419c4b87e407db5e1,
         type: 3}

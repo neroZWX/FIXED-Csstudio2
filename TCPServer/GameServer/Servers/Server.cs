@@ -15,7 +15,7 @@ namespace GameServer.Servers
     {
         private IPEndPoint ipendpoint;
         private Socket ServerSocket;
-        private List<client> Clientlist = new List<client>();
+        private List<Client> Clientlist = new List<Client>();
         private List<Room> roomlist = new List<Room>();
         private ControllerManager controllerManager;
         public Server() {
@@ -38,26 +38,37 @@ namespace GameServer.Servers
         }
         private void AcceptCallBack(IAsyncResult ar) {
             Socket ClientSocket = ServerSocket.EndAccept(ar);
-            client client = new client(ClientSocket,this);
+            Client client = new Client(ClientSocket,this);
             client.Start();
             Clientlist.Add(client);
             ServerSocket.BeginAccept(AcceptCallBack, null);
         }
-        public void RemoveClient(client client) {
+        public void RemoveClient(Client client) {
             lock (Clientlist)
             {
                 Clientlist.Remove(client);
             }
             
         }
-        public void SendResponse(client client, ActionCode actionCode, string data) {
+        public void SendResponse(Client client, ActionCode actionCode, string data) {
             // response the client
             client.Send(actionCode, data);
         }
-        public void HandleRequest(Request request, ActionCode actioncode, string data, client client)
+        public void HandleRequest(Request request, ActionCode actioncode, string data, Client client)
         {
             Console.WriteLine("srv rec: " + actioncode.ToString());
             controllerManager.HandRequest(request, actioncode, data, client);
+        }
+        public void CreateRoom(Client client)
+        {
+            Room room = new Room(this);
+            room.AddClient(client);
+            roomlist.Add(room);
+
+        }
+        public List<Room> GetRoomList() {
+            return roomlist;
+
         }
     }
 }

@@ -343,10 +343,10 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 0.000045790443}
-  m_SizeDelta: {x: 794.2, y: 895.79}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.51372707}
+  m_AnchoredPosition: {x: 19.286194, y: 417.44614}
+  m_SizeDelta: {x: 794.2, y: 883.79}
+  m_Pivot: {x: 0.51169235, y: 0.97916967}
 --- !u!114 &6788466796231997479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,8 +489,8 @@ RectTransform:
   m_Father: {fileID: 6788466795925589861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.008869167}
-  m_AnchorMax: {x: 1, y: 0.99113077}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 484}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -764,8 +764,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6788466796362461061}
   m_HandleRect: {fileID: 6788466796362461062}
   m_Direction: 2
-  m_Value: 0.4999981
-  m_Size: 0.9822616
+  m_Value: 0.49999428
+  m_Size: 0.98217547
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1098,13 +1098,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6788466797646768785}
   - component: {fileID: 6788466797646768784}
+  - component: {fileID: 1760295015081608178}
   m_Layer: 5
   m_Name: RoomListPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6788466797646768785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1136,6 +1137,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9947612311818ca44ac2571e96d981b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1760295015081608178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788466797646768786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d947700b2ea0b4e8c595c7b44f4431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6788466797783426177

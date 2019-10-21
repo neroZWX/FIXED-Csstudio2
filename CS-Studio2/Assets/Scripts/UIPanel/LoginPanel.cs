@@ -69,7 +69,7 @@ public class LoginPanel : BasePanel
         {
             //TODO
             uiMng.PushPanelSync(UIPanelType.RoomList);
-            print("Lol");
+            
         }
         else {
             uiMng.ShowMessageSync("Username or password is invaild, please try it again!");

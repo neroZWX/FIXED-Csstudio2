@@ -37,14 +37,11 @@ public class Message
             //check the message is complete or not
             if ((indexStart - 4) >= count)
             {
-                //string s = Encoding.UTF8.GetString(data, 4, count);
-                //Console.WriteLine("Parse a data:" + s);
-                //pharse data
+              
                 ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 4);
 
                 Debug.Log("ReadMessag: " + actionCode.ToString());
 
-                // ActionCode actioncode = (ActionCode)BitConverter.ToInt32(data, 4);
                 string s = Encoding.UTF8.GetString(data, 8, count - 4);
                 processDataCallBack(actionCode, s);
 
@@ -58,27 +55,18 @@ public class Message
             }
         }
     }
-    //public static byte[] PackData(ActionCode actionCode, string data)
-    //{
-    //    byte[] requestBytes = BitConverter.GetBytes((int)actionCode);
-    //    byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-    //    int dataAmount = requestBytes.Length + dataBytes.Length;
-    //    byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);
-    //    byte[] newBytes = dataAmountBytes.Concat(requestBytes).ToArray<byte>();//Concat(dataBytes);
-    //    return newBytes.Concat(dataBytes).ToArray<byte>();
-
-    //}
+    
     public static byte[] PackData(Request request, ActionCode actionCdoe, string data)
     {
         byte[] requestBytes = BitConverter.GetBytes((int)request);
         byte[] actionCodeBytes = BitConverter.GetBytes((int)actionCdoe);
-        StringBuilder sb = new StringBuilder();
-        sb.Append("actionCodeBytes: ");
-        foreach (var i in actionCodeBytes)
-        {
-            sb.Append(i + " ");
-        }
-        Debug.Log(sb.ToString());
+        //StringBuilder sb = new StringBuilder();
+        //sb.Append("actionCodeBytes: ");
+        //foreach (var i in actionCodeBytes)
+        //{
+        //    sb.Append(i + " ");
+        //}
+        //Debug.Log(sb.ToString());
         byte[] dataBytes = Encoding.UTF8.GetBytes(data);
         int dataAmount = requestBytes.Length + dataBytes.Length + actionCodeBytes.Length;
         byte[] dataAmountBytes = BitConverter.GetBytes(dataAmount);

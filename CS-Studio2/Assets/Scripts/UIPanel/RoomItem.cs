@@ -22,16 +22,19 @@ public class RoomItem : MonoBehaviour
         this.totalCount.text = "TotalMatch\n"+totalCount;
         this.winCount.text = "WinMatch\n"+ winCount;
     }
-    public void SetRoomInfo(string username, string totalCount, string winCount)
-    {
+    //public void SetRoomInfo(string username, string totalCount, string winCount)
+    //{
 
-        this.username.text = username;
-        this.totalCount.text = "TotalMatch\n" + totalCount;
-        this.winCount.text = "WinMatch\n" + winCount;
-    }
+    //    this.username.text = username;
+    //    this.totalCount.text = "TotalMatch\n" + totalCount;
+    //    this.winCount.text = "WinMatch\n" + winCount;
+    //}
 
     // Update is called once per frame
     private void OnJoinClick() {
 
+    }
+    public void DestroySelf() {
+        GameObject.Destroy(this.gameObject);
     }
 }

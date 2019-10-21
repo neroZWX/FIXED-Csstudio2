@@ -14,7 +14,7 @@ namespace GameServer.Controller
         public Request Request {
             get { return request; }
         }
-        public virtual string DefaultHandle(string data,client client, Server server) {
+        public virtual string DefaultHandle(string data,Client client, Server server) {
             return null;
         }
     }
