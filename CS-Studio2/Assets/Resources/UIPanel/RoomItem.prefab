@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8098516460238504309}
   - component: {fileID: -5074450776882516785}
   m_Layer: 5
-  m_Name: RoomList
+  m_Name: RoomItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39359ae70e23c14d913ec7fbdb3f0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userName: {fileID: 8098516461269760195}
+  username: {fileID: 8098516461269760195}
   totalCount: {fileID: 8098516460285265584}
   winCount: {fileID: 8098516462042167460}
   joinButton: {fileID: 8098516461660419426}

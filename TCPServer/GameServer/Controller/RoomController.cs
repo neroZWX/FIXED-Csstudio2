@@ -25,7 +25,7 @@ namespace GameServer.Controller
             StringBuilder sb = new StringBuilder();
             foreach (Room room in server.GetRoomList()) {
                 if (room.IsWaitingJoin()) {
-                    sb.Append(room.GetHouseOwnerData()+"/");
+                    sb.Append(room.GetHouseOwnerData()+"|");
                 }
             }
             if (sb.Length == 0)
@@ -36,6 +36,27 @@ namespace GameServer.Controller
                 sb.Remove(sb.Length - 1, 1);
             }
             return sb.ToString();
+        }
+        public string JoinRoom(string data, Client client, Server server) {
+
+            int id = int.Parse(data);
+            Room room = server.GetRoomById(id);
+            if (room == null)
+            {
+                //NO find room
+                return ((int)ReturnCode.NotFound).ToString();
+            }
+            else if (room.IsWaitingJoin() == false)
+            {
+                //cant join the room
+                return ((int)ReturnCode.Fail).ToString();
+            }
+            else {
+                room.AddClient(client);
+                string roomData = room.GetRoomtData();
+                return ((int)ReturnCode.Success).ToString() + "-" + roomData;
+            }
+
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
         this.Id = int.Parse(strs[0]);
         this.Username = strs[1];
         this.TotalCount = int.Parse(strs[2]);
-        this.WinCount = int.Parse(strs[3]);
+        this.WinCount = int.Parse(strs[3]);      
     }
     public UserData(string username, int totalCount, int winCount) {
         this.Username = username;

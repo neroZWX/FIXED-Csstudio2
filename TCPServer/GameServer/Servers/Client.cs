@@ -17,6 +17,7 @@ namespace GameServer.Servers
         private Server server; 
         private Message msg = new Message();
         public MySqlConnection mysqlConn;
+        private Room room;
         private User user;
         private Result result;
 
@@ -30,7 +31,13 @@ namespace GameServer.Servers
             this.result = result;
         }
         public string GetUserData() {
-            return user.Username + "," + result.TotalCount + "," + result.WinCount;
+            return user.id +","+user.Username + "," + result.TotalCount + "," + result.WinCount;
+        }
+        public Room Room {
+            set { room = value; }
+        }
+        public int GetUserId() {
+            return user.id;
         }
       
         public Client() {
@@ -85,8 +92,12 @@ namespace GameServer.Servers
             ConnHelper.CloseConnection(MySQLConn);
             if (ClientSocket != null)
                 ClientSocket.Close();
+            if (room != null)
+            {
+                room.Close(this);
+            }
             server.RemoveClient(this);
-            
+                       
         }
         public void Send(ActionCode actionCode, string data) {
             byte[] bytes = Message.PackData(actionCode, data);

@@ -66,9 +66,20 @@ namespace GameServer.Servers
             roomlist.Add(room);
 
         }
-        public List<Room> GetRoomList() {
+        public void RemoveRoom(Room room) {
+            if (roomlist != null && room != null) {
+                roomlist.Remove(room);
+            }
+        }
+        public List <Room> GetRoomList() {
             return roomlist;
-
+        }
+        //根据Room查找ID
+        public Room GetRoomById(int id) {
+            foreach (Room room in roomlist) {
+                if (room.GetRoomId() == id) return room;
+            }
+            return null;
         }
     }
 }

@@ -10,8 +10,11 @@ public class CreateRoomRequest : BaseRequest
     {
         request = Request.Room;
         actionCode = ActionCode.CreateRoom;
-        roomPanel = GetComponent<RoomPanel>();
+        
         base.Awake();
+    }
+    public void SetPanel(BasePanel panel) {
+        roomPanel = panel as RoomPanel;
     }
 
     public override void SendRequest()

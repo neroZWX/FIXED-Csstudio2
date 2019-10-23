@@ -20,8 +20,10 @@ public class RoomPanel : BasePanel
     private Transform StartButton;
     private Transform ExitButton;
 
-    private CreateRoomRequest crRequest;
+   
     private UserData ud = null;
+    private UserData ud1 = null;
+    private UserData ud2 = null;
     private void Start()
     {
         localPlayerUsername = transform.Find("Player1/UserName").GetComponent<Text>();
@@ -37,7 +39,7 @@ public class RoomPanel : BasePanel
         StartButton = transform.Find("Start");
         ExitButton = transform.Find("Exit");
 
-        crRequest = GetComponent<CreateRoomRequest>();
+        
 
         transform.Find("Start").GetComponent<Button>().onClick.AddListener(OnStartClick);
         transform.Find("Exit").GetComponent<Button>().onClick.AddListener(OnExitClick);
@@ -47,9 +49,7 @@ public class RoomPanel : BasePanel
     {
         if (Player1 != null)
             PlayAnim();
-        if (crRequest == null)
-            crRequest = GetComponent<CreateRoomRequest>();
-        crRequest.SendRequest();
+       
     }
     public override void OnExit()
     {
@@ -70,11 +70,20 @@ public class RoomPanel : BasePanel
             SetLocalPlayerRes(ud.Username, ud.TotalCount.ToString(), ud.WinCount.ToString());
             ClearEnemyPlayer();
             ud = null;
+            if (ud1 != null || ud2 != null) {
+                SetLocalPlayerRes(ud1.Username, ud1.TotalCount.ToString(), ud1.WinCount.ToString());
+                SetenemyPlayerRes(ud2.Username, ud2.TotalCount.ToString(), ud2.WinCount.ToString());
+                ud1 = null; ud2 = null;
+            }
       }
     }
     public void SetLocalPlayerResSync() {
         ud = facade.GetUserData();
+    }
+    public void SetAllPlayerResSync(UserData ud1, UserData ud2) {
 
+         this.ud1 = ud1;
+         this.ud2 = ud2;
     }
     public  void SetLocalPlayerRes(string username, string totalCount, string winCount) {
         localPlayerUsername.text = username;
@@ -89,7 +98,7 @@ public class RoomPanel : BasePanel
     }
     public  void ClearEnemyPlayer()
     {
-        enemyPlayerUsername.text = "";
+        enemyPlayerUsername.text = "Waiting for player...";
         enemyPlayerTotalcount.text = "Waiting for player...";
         enemyPlayerWincount.text = "";
     }
@@ -103,10 +112,10 @@ public class RoomPanel : BasePanel
     }
     private void PlayAnim() {
         gameObject.SetActive(true);
-        Player1.localPosition = new Vector3(1000, 0, 0);
+        Player1.localPosition = new Vector3(-1000, 0, 0);
         Player1.DOLocalMoveX(481, 0.5f);
 
-        Player2.localPosition = new Vector3(-1000, 0, 0);
+        Player2.localPosition = new Vector3(1000, 0, 0);
         Player2.DOLocalMoveX(-481, 0.5f);
 
         StartButton.localScale =  Vector3.zero;
