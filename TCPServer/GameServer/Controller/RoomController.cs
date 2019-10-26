@@ -54,6 +54,7 @@ namespace GameServer.Controller
             else {
                 room.AddClient(client);
                 string roomData = room.GetRoomtData();
+                room.BroadCastMessage(client, ActionCode.UpdataRoom, roomData);
                 return ((int)ReturnCode.Success).ToString() + "-" + roomData;
             }
 

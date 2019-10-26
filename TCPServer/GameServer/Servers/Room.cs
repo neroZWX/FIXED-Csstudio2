@@ -62,5 +62,13 @@ namespace GameServer.Servers
             }
             return sb.ToString();
         }
+        public void BroadCastMessage(Client excludeClient,ActionCode actionCode, string data) {
+            foreach (Client client in clientRoom) {
+                if (client != excludeClient) {
+                    server.SendResponse(client, actionCode, data);
+                }
+            }
+
+        }
     }
 }

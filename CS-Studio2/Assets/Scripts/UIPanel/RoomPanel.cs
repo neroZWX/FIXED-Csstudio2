@@ -66,17 +66,20 @@ public class RoomPanel : BasePanel
     }
     private void Update()
     {
-        if (ud != null) {
+        if (ud != null)
+        {
             SetLocalPlayerRes(ud.Username, ud.TotalCount.ToString(), ud.WinCount.ToString());
             ClearEnemyPlayer();
             ud = null;
-            if (ud1 != null || ud2 != null) {
+        }
+            if (ud1 != null || ud2 != null)
+            {
                 SetLocalPlayerRes(ud1.Username, ud1.TotalCount.ToString(), ud1.WinCount.ToString());
                 SetenemyPlayerRes(ud2.Username, ud2.TotalCount.ToString(), ud2.WinCount.ToString());
                 ud1 = null; ud2 = null;
             }
-      }
-    }
+        }
+    
     public void SetLocalPlayerResSync() {
         ud = facade.GetUserData();
     }
@@ -98,7 +101,7 @@ public class RoomPanel : BasePanel
     }
     public  void ClearEnemyPlayer()
     {
-        enemyPlayerUsername.text = "Waiting for player...";
+        enemyPlayerUsername.text = "";
         enemyPlayerTotalcount.text = "Waiting for player...";
         enemyPlayerWincount.text = "";
     }

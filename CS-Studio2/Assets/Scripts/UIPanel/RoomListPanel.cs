@@ -79,8 +79,7 @@ public class RoomListPanel : BasePanel
         if (ud1 != null && ud2 != null) {
             BasePanel panel = uiMng.PushPanel(UIPanelType.Room);
             (panel as RoomPanel).SetAllPlayerResSync(ud1, ud2);
-            ud1 = null;
-            ud2 = null;
+            ud1 = null;ud2 = null;
         }
     }
     private void OnCloseClick() {

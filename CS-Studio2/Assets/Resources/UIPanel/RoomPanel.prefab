@@ -306,7 +306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.9, y: 7.7}
+  m_AnchoredPosition: {x: 0.84995, y: -254.05}
   m_SizeDelta: {x: 646.5, y: 208.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7984545003706722296
@@ -348,7 +348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TotalMatch: 200'
+  m_Text: 'win: 1'
 --- !u!1 &4883327917925224568
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6233966220159125048}
   - component: {fileID: 7430776558462381447}
+  - component: {fileID: 7890361612786057394}
   m_Layer: 5
   m_Name: RoomPanel
   m_TagString: Untagged
@@ -553,6 +554,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55575b8f976acf479ed38007b21b27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7890361612786057394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233966220159125031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d237c37eb2ed141b440a51fa752994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6233966220843345553
@@ -801,7 +814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3518651705031993541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -818,7 +831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.835, y: -214.3}
+  m_AnchoredPosition: {x: 24.835, y: -21}
   m_SizeDelta: {x: 661.6, y: 211.5}
   m_Pivot: {x: 0.5248409, y: 0.50000006}
 --- !u!222 &130853655816591372
@@ -860,7 +873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.01
-  m_Text: Win:0
+  m_Text: 'TotalMatch: 200'
 --- !u!1 &6900906146357460340
 GameObject:
   m_ObjectHideFlags: 0

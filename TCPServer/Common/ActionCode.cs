@@ -15,6 +15,7 @@ namespace Common
         ListRoom,
         CreateRoom,
         JoinRoom,
+        UpdataRoom,
        
     }
 }
