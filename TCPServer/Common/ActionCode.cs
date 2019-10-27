@@ -16,6 +16,7 @@ namespace Common
         CreateRoom,
         JoinRoom,
         UpdataRoom,
+        QuitRoom,
        
     }
 }

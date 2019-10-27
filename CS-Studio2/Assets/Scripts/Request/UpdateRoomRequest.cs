@@ -11,7 +11,7 @@ public class UpdateRoomRequest : BaseRequest
 
         request = Request.Room;
         actionCode = ActionCode.UpdataRoom;
-        roomPanel.GetComponent<RoomPanel>();
+        roomPanel = GetComponent<RoomPanel>();
         base.Awake();
     }
     public override void OnResponse(string data)

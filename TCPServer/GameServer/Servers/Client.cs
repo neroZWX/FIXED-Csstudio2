@@ -17,9 +17,9 @@ namespace GameServer.Servers
         private Server server; 
         private Message msg = new Message();
         public MySqlConnection mysqlConn;
-        private Room room;
         private User user;
         private Result result;
+        private Room room;
 
 
         public MySqlConnection MySQLConn
@@ -35,6 +35,7 @@ namespace GameServer.Servers
         }
         public Room Room {
             set { room = value; }
+            get { return room; }
         }
         public int GetUserId() {
             return user.id;
@@ -102,6 +103,9 @@ namespace GameServer.Servers
         public void Send(ActionCode actionCode, string data) {
             byte[] bytes = Message.PackData(actionCode, data);
             ClientSocket.Send(bytes);
+        }
+        public bool IsHouseOwner() {
+            return room.IsHouseOwner(this);
         }
     }
 }

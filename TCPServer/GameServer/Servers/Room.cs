@@ -37,6 +37,19 @@ namespace GameServer.Servers
             }
             
         }
+        public void RemoveClient(Client client) {
+            client.Room = null;
+            clientRoom.Remove(client);
+            if (clientRoom.Count >= 2)
+            {
+                state = RoomState.waitingBattle;
+            }
+            else {
+                state = RoomState.WaitingJoin;
+
+            }
+
+        }
         public string GetHouseOwnerData() {
             return clientRoom[0].GetUserData();
         }
@@ -68,6 +81,16 @@ namespace GameServer.Servers
                     server.SendResponse(client, actionCode, data);
                 }
             }
+        }
+        public bool IsHouseOwner(Client client) {
+            return client == clientRoom[0];
+
+        }
+        public void CloseRoom() {
+            foreach (Client client in clientRoom) {
+                client.Room = null;
+            }
+            server.RemoveRoom(this);
 
         }
     }

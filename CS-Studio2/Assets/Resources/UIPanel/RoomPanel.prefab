@@ -513,7 +513,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6233966220159125048}
   - component: {fileID: 7430776558462381447}
-  - component: {fileID: 7890361612786057394}
+  - component: {fileID: 6043193929450740028}
+  - component: {fileID: 1145055685010403416}
   m_Layer: 5
   m_Name: RoomPanel
   m_TagString: Untagged
@@ -556,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55575b8f976acf479ed38007b21b27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7890361612786057394
+--- !u!114 &6043193929450740028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,6 +567,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d237c37eb2ed141b440a51fa752994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1145055685010403416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233966220159125031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a8dd8bfdbc57f45829b3e24d1cd55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6233966220843345553

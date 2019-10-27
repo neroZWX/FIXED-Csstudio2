@@ -24,6 +24,10 @@ public class RoomPanel : BasePanel
     private UserData ud = null;
     private UserData ud1 = null;
     private UserData ud2 = null;
+
+    private QuitRoomRequest quitRoomRequest;
+
+    private bool isPopPanel = false;
     private void Start()
     {
         localPlayerUsername = transform.Find("Player1/UserName").GetComponent<Text>();
@@ -43,6 +47,8 @@ public class RoomPanel : BasePanel
 
         transform.Find("Start").GetComponent<Button>().onClick.AddListener(OnStartClick);
         transform.Find("Exit").GetComponent<Button>().onClick.AddListener(OnExitClick);
+
+        quitRoomRequest = GetComponent<QuitRoomRequest>();
         PlayAnim();
     }
     public override void OnEnter()
@@ -72,13 +78,22 @@ public class RoomPanel : BasePanel
             ClearEnemyPlayer();
             ud = null;
         }
-            if (ud1 != null || ud2 != null)
+        if (ud1 != null )
             {
                 SetLocalPlayerRes(ud1.Username, ud1.TotalCount.ToString(), ud1.WinCount.ToString());
+            if (ud2 != null)
                 SetenemyPlayerRes(ud2.Username, ud2.TotalCount.ToString(), ud2.WinCount.ToString());
-                ud1 = null; ud2 = null;
+            else
+                ClearEnemyPlayer();
+            ud1 = null; ud2 = null;
             }
+        if (isPopPanel) {
+            uiMng.PopPanel();
+            isPopPanel = false;
+
         }
+     }
+   
     
     public void SetLocalPlayerResSync() {
         ud = facade.GetUserData();
@@ -111,7 +126,10 @@ public class RoomPanel : BasePanel
 
     }
     private void OnExitClick() {
-
+        quitRoomRequest.SendRequest();
+    }
+    public void OnExitResponse() {
+        isPopPanel = true;
     }
     private void PlayAnim() {
         gameObject.SetActive(true);
