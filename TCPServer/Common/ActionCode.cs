@@ -17,6 +17,9 @@ namespace Common
         JoinRoom,
         UpdataRoom,
         QuitRoom,
+        StartGame,
+        ShowTimer,
+        StartPlay,
        
     }
 }

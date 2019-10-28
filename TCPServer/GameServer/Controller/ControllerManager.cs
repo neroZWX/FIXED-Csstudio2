@@ -24,6 +24,7 @@ namespace GameServer.Controller
             controllerDict.Add(defaultController.Request, defaultController);
             controllerDict.Add(Request.User, new UserController());
             controllerDict.Add(Request.Room, new RoomController());
+            controllerDict.Add(Request.Game, new GameController());
 
 
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Common;
 
 public class RoomPanel : BasePanel
 {
@@ -26,8 +27,11 @@ public class RoomPanel : BasePanel
     private UserData ud2 = null;
 
     private QuitRoomRequest quitRoomRequest;
+    private StartGameRequest startGameRequest;
 
     private bool isPopPanel = false;
+ 
+
     private void Start()
     {
         localPlayerUsername = transform.Find("Player1/UserName").GetComponent<Text>();
@@ -49,6 +53,7 @@ public class RoomPanel : BasePanel
         transform.Find("Exit").GetComponent<Button>().onClick.AddListener(OnExitClick);
 
         quitRoomRequest = GetComponent<QuitRoomRequest>();
+        startGameRequest = GetComponent<StartGameRequest>();
         PlayAnim();
     }
     public override void OnEnter()
@@ -69,6 +74,16 @@ public class RoomPanel : BasePanel
     {
         PlayAnim();
 
+    }
+    public void OnStartResponse(ReturnCode returnCode) {
+        if (returnCode == ReturnCode.Fail)
+        {
+            uiMng.ShowMessageSync("you are not house owmer, cannot start the game");
+        }
+        else {
+            uiMng.PushPanelSync(UIPanelType.Game);
+
+        }
     }
     private void Update()
     {
@@ -92,7 +107,8 @@ public class RoomPanel : BasePanel
             isPopPanel = false;
 
         }
-     }
+
+    }
    
     
     public void SetLocalPlayerResSync() {
@@ -123,7 +139,7 @@ public class RoomPanel : BasePanel
 
 
     private void OnStartClick() {
-
+        startGameRequest.SendRequest();
     }
     private void OnExitClick() {
         quitRoomRequest.SendRequest();
