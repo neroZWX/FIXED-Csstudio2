@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     public GameObject AkBulletPrefab;
     private Transform AKTrans;
+    private Vector3 shootDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,22 +22,25 @@ public class PlayerAttack : MonoBehaviour
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded")) {
 
-            if (Input.GetMouseButton(0)) {
+            if (Input.GetMouseButtonDown(0)) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 bool IsCollider = Physics.Raycast(ray, out hit);
                 if (IsCollider) {
-                    Vector3 point = hit.point;
-                    anim.SetTrigger("Attack");  
-                    Shoot(point);
+                    Vector3 targetPoint = hit.point;
+                    targetPoint.y = transform.position.y;
+                    shootDir  = targetPoint - transform.position;
+                    transform.rotation = Quaternion.LookRotation(shootDir);
+                    anim.SetTrigger("Attack");
+                    Invoke("Shoot", 0.5f);
+                    Shoot(shootDir);
                 }
             }
         }
     }
-    private void Shoot(Vector3 targetPoint) {
-        targetPoint.y = transform.position.y;
-        Vector3 dir = targetPoint - transform.position;
-        GameObject.Instantiate(AkBulletPrefab, AKTrans.position, Quaternion.LookRotation(dir));
+    private void Shoot(Vector3 dir) {
+        
+        GameObject.Instantiate(AkBulletPrefab, AKTrans.position, Quaternion.LookRotation(shootDir));
 
     }
 }
