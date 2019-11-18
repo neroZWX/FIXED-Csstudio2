@@ -82,6 +82,7 @@ public class RoomPanel : BasePanel
         }
         else {
             uiMng.PushPanelSync(UIPanelType.Game);
+            facade.EnterPlayingSync();
 
         }
     }

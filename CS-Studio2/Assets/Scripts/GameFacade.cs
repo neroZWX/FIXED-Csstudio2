@@ -14,6 +14,8 @@ public class GameFacade : MonoBehaviour
     private CameraManager camera;
     private ClientManager clinetMng;
     private RequestManager requestMng;
+
+    private bool isEnterPlaying = false;
     private void Awake()
     {
         if (_instance != null) {
@@ -29,8 +31,12 @@ public class GameFacade : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  
         UpdateManager();
+        if (isEnterPlaying) {
+            EnterPlaying();
+            isEnterPlaying = false;
+        }
     }
     private void InitManager()
     {
@@ -103,4 +109,17 @@ public class GameFacade : MonoBehaviour
     public UserData GetUserData (){
         return player.UserData;
 }
+    public void SetCurrentRoleType(RoleType rt) {
+        player.SetCurrentRoleType(rt);
+    }
+    public GameObject GetCurrentRoleGameObject() {
+        return player.GetCurrentRoleGameObject();
+    }
+    public void EnterPlayingSync() {
+        isEnterPlaying = true;
+    }
+    private void EnterPlaying() {
+        player.SpawnRoles();
+        camera.FollowRole();
+    }
 }

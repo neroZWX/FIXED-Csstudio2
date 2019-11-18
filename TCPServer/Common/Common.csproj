@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="RetrunCode.cs" />
+    <Compile Include="RoleType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
