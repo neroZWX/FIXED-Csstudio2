@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private float speed = 3;
+    private float speed = 6;
     private Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded")== false) return;
         float h = Input.GetAxis("Horizontal");

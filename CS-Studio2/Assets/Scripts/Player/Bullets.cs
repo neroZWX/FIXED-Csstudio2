@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
-    public int speed = 5;
+    public int speed = 50;
     private Rigidbody rgd;
     // Start is called before the first frame update
     void Start()

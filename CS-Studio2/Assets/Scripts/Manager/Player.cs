@@ -11,13 +11,15 @@ public class Player : BaseManager
     private RoleType currentRoleType;
     private GameObject currentRoleGameObject;
 
-    public void SetCurrentRoleType(RoleType rt) {
-        currentRoleType = rt; 
+    public void SetCurrentRoleType(RoleType rt)
+    {
+        currentRoleType = rt;
 
     }
 
     public Player(GameFacade gameFacade) : base(gameFacade) { }
-    public UserData UserData {
+    public UserData UserData
+    {
         set { userData = value; }
         get { return userData; }
     }
@@ -26,21 +28,40 @@ public class Player : BaseManager
         playerPositions = GameObject.Find("playerPosition").transform;
         InitRoleDataDict();
     }
-    private void InitRoleDataDict() {
-        roleDataDict.Add(RoleType.role1, new RoleData(RoleType.role1, "AKBullets", "TS_militias_jungle_A",playerPositions.Find("position1")));
-        roleDataDict.Add(RoleType.role2, new RoleData(RoleType.role2, "AKBullets", "TS_militias_jungle_A",playerPositions.Find("position2")));
+    private void InitRoleDataDict()
+    {
+        roleDataDict.Add(RoleType.role1, new RoleData(RoleType.role1, "TS_militias_jungle_A", "AKBullets", playerPositions.Find("position1")));
+        roleDataDict.Add(RoleType.role2, new RoleData(RoleType.role2, "TS_militias_jungle_D", "AKBullets", playerPositions.Find("position2")));
     }
-    public void SpawnRoles() {
-        foreach (RoleData rd in roleDataDict.Values) {
+    public void SpawnRoles()
+    {
+        foreach (RoleData rd in roleDataDict.Values)
+        {
 
-           GameObject go= GameObject.Instantiate(rd.RolePrefab, rd.SpawnPosition, Quaternion.identity);
-            if (rd.RoleType == currentRoleType) {
+            GameObject go = GameObject.Instantiate(rd.RolePrefab, rd.SpawnPosition, Quaternion.identity);
+            if (rd.RoleType == currentRoleType)
+            {
                 currentRoleGameObject = go;
 
-            }          
+            }
         }
     }
-    public GameObject GetCurrentRoleGameObject() {
+    public GameObject GetCurrentRoleGameObject()
+    {
         return currentRoleGameObject;
     }
+    private RoleData GetRoleData(RoleType rt) {
+        RoleData rd = null;
+        roleDataDict.TryGetValue(rt, out rd);
+        return rd;
+    }
+
+    public void AddControlScript()
+    {
+        currentRoleGameObject.AddComponent<PlayerMove>();
+        PlayerAttack playerattack = currentRoleGameObject.AddComponent<PlayerAttack>();
+        RoleType rt = currentRoleGameObject.GetComponent<PlayerInfo>().roleType;
+        RoleData rd = GetRoleData(rt);
+        playerattack.AkBulletPrefab = rd.BulletPrefab;
+     }
 }

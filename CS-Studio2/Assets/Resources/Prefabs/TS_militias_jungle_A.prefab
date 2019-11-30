@@ -1816,8 +1816,7 @@ GameObject:
   - component: {fileID: 9502090}
   - component: {fileID: 1464827649}
   - component: {fileID: 1464827648}
-  - component: {fileID: 8649853131149715117}
-  - component: {fileID: 1369519181329640710}
+  - component: {fileID: 1130939479660150976}
   m_Layer: 0
   m_Name: TS_militias_jungle_A
   m_TagString: Untagged
@@ -1886,7 +1885,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5c3d3cbceb86cbc4d814e7bb9a07df6a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1914,15 +1913,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124916}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 9
+  m_Drag: 10
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &8649853131149715117
+  m_CollisionDetection: 1
+--- !u!114 &1130939479660150976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1931,23 +1930,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 124916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e257be3475f0e7a4d8a99f4ca57a4109, type: 3}
+  m_Script: {fileID: 11500000, guid: 32775c870bae1d24795343ac1782a15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1369519181329640710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd508a7c80b1ce54fa64887373f739b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AkBulletPrefab: {fileID: 1359989027560826588, guid: b4ea876885ebf854ba843214e464731f,
-    type: 3}
+  roleType: 0
 --- !u!1 &129122
 GameObject:
   m_ObjectHideFlags: 0

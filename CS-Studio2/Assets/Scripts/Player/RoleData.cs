@@ -14,7 +14,7 @@ public class RoleData
     public RoleData(RoleType roleType, string rolePath, string bulletPath,Transform spawnPos) {
         this.RoleType = roleType;
         this.RolePrefab = Resources.Load(Prefix_Prefab + rolePath) as GameObject;
-        this.BulletPrefab = Resources.Load(bulletPath) as GameObject;
+        this.BulletPrefab = Resources.Load(Prefix_Prefab + bulletPath) as GameObject;
         this.SpawnPosition = spawnPos.position;
     }
 

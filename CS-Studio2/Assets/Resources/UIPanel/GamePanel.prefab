@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4302198477576127017}
   - component: {fileID: 3366910269123959721}
   - component: {fileID: 7254015166329808938}
+  - component: {fileID: 7695714355914074774}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -137,5 +138,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89cbac6f794c0d940b2852df415fa3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7695714355914074774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718038468892479611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f829c5d61aaff9409a77d7a6d22c0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

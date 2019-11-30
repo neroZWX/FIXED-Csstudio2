@@ -10,10 +10,10 @@ public class CameraManager : BaseManager
     private FollowTarget followTarget;
     private Vector3 originalPosition;
     private Vector3 originalRotation;
-    private GameFacade facade;
+    //private GameFacade facade;
 
 
-    public CameraManager (GameFacade facade) : base(facade) { }
+    public CameraManager(GameFacade gameFacade) : base(gameFacade) { }
     public override void OnInit()
     {
         cameraGo = Camera.main.gameObject;
@@ -24,7 +24,7 @@ public class CameraManager : BaseManager
 
     public void FollowRole()
     {
-        followTarget.target = facade.GetCurrentRoleGameObject().transform;
+        followTarget.target = gamefacde.GetCurrentRoleGameObject().transform;
         cameraAnim.enabled = false;
         originalPosition = cameraGo.transform.position;
         originalRotation = cameraGo.transform.eulerAngles;

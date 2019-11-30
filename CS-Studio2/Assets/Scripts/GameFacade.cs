@@ -122,4 +122,7 @@ public class GameFacade : MonoBehaviour
         player.SpawnRoles();
         camera.FollowRole();
     }
+    public void AddControlScript() {
+        player.AddControlScript();
+    }
 }
