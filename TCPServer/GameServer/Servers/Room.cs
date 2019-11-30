@@ -56,7 +56,9 @@ namespace GameServer.Servers
         }
         public void Close(Client client) {
             if (client == clientRoom[0])
-                server.RemoveRoom(this);
+            {
+                CloseRoom();
+            }
             else
                 clientRoom.Remove(client);
         }

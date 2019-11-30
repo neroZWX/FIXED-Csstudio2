@@ -20,7 +20,7 @@ namespace GameServer.Controller
             if (client.IsHouseOwner())
             {
                 Room room = client.Room;
-                room.BroadCastMessage(client,ActionCode.StartGame, ((int)ReturnCode.Success).ToString());
+                room.BroadCastMessage(client, ActionCode.StartGame, ((int)ReturnCode.Success).ToString());
                 room.StartTimer();
                 return ((int)ReturnCode.Success).ToString();
             }
@@ -29,5 +29,14 @@ namespace GameServer.Controller
 
             }
         }
+        public string Move(string data, Client client, Server server) {
+            Room room = client.Room;
+            if(room!=null)
+            room.BroadCastMessage(client, ActionCode.Move, data);
+
+            return null;
+        }
+
     }
+  
 }

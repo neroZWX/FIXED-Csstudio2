@@ -101,8 +101,14 @@ namespace GameServer.Servers
                        
         }
         public void Send(ActionCode actionCode, string data) {
-            byte[] bytes = Message.PackData(actionCode, data);
-            ClientSocket.Send(bytes);
+            try
+            {
+                byte[] bytes = Message.PackData(actionCode, data);
+                ClientSocket.Send(bytes);
+            }
+            catch (Exception e) {
+                Console.WriteLine("Cannot send the message" + e);
+            }
         }
         public bool IsHouseOwner() {
             return room.IsHouseOwner(this);

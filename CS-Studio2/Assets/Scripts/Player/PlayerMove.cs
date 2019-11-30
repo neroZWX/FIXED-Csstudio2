@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public float forward = 0;
+
     private float speed = 6;
     private Animator anim;
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class PlayerMove : MonoBehaviour
 
             //controllering the animation of the character
             float res = Mathf.Max(Mathf.Abs(h), Mathf.Abs(v));
+            forward = res;
             anim.SetFloat("Forward", res);
         }
     }

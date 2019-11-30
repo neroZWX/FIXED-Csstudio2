@@ -26,7 +26,7 @@ public class GamePanel : BasePanel
     }
     public void ShowTime(int time) {
         timer.gameObject.SetActive(true);
-        timer.text = timer.ToString();
+        timer.text = time.ToString();
         timer.transform.localScale = Vector3.one;
         Color tempColor = timer.color;
         tempColor.a = 1;

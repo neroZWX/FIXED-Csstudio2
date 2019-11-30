@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         AKTrans = transform.Find("Bip001/Bip001 Pelvis/Bip001 Spine/" +
-            "Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/WeaponContainer/weapon_fal");
+            "Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/WeaponContainer/FirePoint");
         
     }
 

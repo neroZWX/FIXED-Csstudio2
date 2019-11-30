@@ -8,8 +8,11 @@ public class Player : BaseManager
     private UserData userData;
     private Dictionary<RoleType, RoleData> roleDataDict = new Dictionary<RoleType, RoleData>();
     private Transform playerPositions;
+
     private RoleType currentRoleType;
     private GameObject currentRoleGameObject;
+    private GameObject playerSyncRequest;
+    private GameObject remoteRoleGameobject;
 
     public void SetCurrentRoleType(RoleType rt)
     {
@@ -44,6 +47,9 @@ public class Player : BaseManager
                 currentRoleGameObject = go;
 
             }
+            else {
+                remoteRoleGameobject = go;
+            }
         }
     }
     public GameObject GetCurrentRoleGameObject()
@@ -64,4 +70,9 @@ public class Player : BaseManager
         RoleData rd = GetRoleData(rt);
         playerattack.AkBulletPrefab = rd.BulletPrefab;
      }
+    public void CreateSyncRequest() {
+        playerSyncRequest = new GameObject("PlayerSyncRequest");
+        playerSyncRequest.AddComponent<MoveRequest>().SetLocalPlayer(currentRoleGameObject.transform, currentRoleGameObject.GetComponent<PlayerMove>())
+            .SetRemotePlayer(remoteRoleGameobject.transform);
+    }
 }

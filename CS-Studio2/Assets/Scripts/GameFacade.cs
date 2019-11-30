@@ -122,7 +122,8 @@ public class GameFacade : MonoBehaviour
         player.SpawnRoles();
         camera.FollowRole();
     }
-    public void AddControlScript() {
+    public void StarPlaying() {
         player.AddControlScript();
+        player.CreateSyncRequest();
     }
 }

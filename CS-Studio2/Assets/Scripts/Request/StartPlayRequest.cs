@@ -5,7 +5,7 @@ using Common;
 
 public class StartPlayRequest : BaseRequest
 {
-    private bool isAddControlScript = false;
+    private bool isStartPlaying = false;
 
     public override void Awake()
     {
@@ -15,14 +15,14 @@ public class StartPlayRequest : BaseRequest
     }
     private void Update()
     {
-        if (isAddControlScript) {
-            facade.AddControlScript();
-            isAddControlScript = false;
+        if (isStartPlaying) {
+            facade.StarPlaying();
+            isStartPlaying = false;
         }
       
     }
     public override void OnResponse(string data)
     {
-        isAddControlScript = true;
+        isStartPlaying = true;
     }
 }
