@@ -17,6 +17,7 @@
 .consulo/
 /*.tmp
 /*.svd
+/*...
  
 # ============ #
 # OS generated #
