@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject AkBulletPrefab;
     private Transform AKTrans;
     private Vector3 shootDir;
+    private Player playerMng;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +34,18 @@ public class PlayerAttack : MonoBehaviour
                     transform.rotation = Quaternion.LookRotation(shootDir);
                     anim.SetTrigger("Attack");
                     Invoke("Shoot", 0.5f);
-                    Shoot(shootDir);
+                    
                 }
             }
         }
     }
-    private void Shoot(Vector3 dir) {
-        
-        GameObject.Instantiate(AkBulletPrefab, AKTrans.position, Quaternion.LookRotation(shootDir));
+    public void SetPlayerMng(Player playerMng) {
+
+        this.playerMng = playerMng;
+    }
+    private void Shoot() {
+        playerMng.Shoot(AkBulletPrefab, AKTrans.position, Quaternion.LookRotation(shootDir));
+       // GameObject.Instantiate(AkBulletPrefab, AKTrans.position, Quaternion.LookRotation(shootDir));
 
     }
 }

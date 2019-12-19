@@ -13,6 +13,7 @@ public class Player : BaseManager
     private GameObject currentRoleGameObject;
     private GameObject playerSyncRequest;
     private GameObject remoteRoleGameobject;
+    private ShootRequest shootReuqest;
 
     public void SetCurrentRoleType(RoleType rt)
     {
@@ -34,7 +35,7 @@ public class Player : BaseManager
     private void InitRoleDataDict()
     {
         roleDataDict.Add(RoleType.role1, new RoleData(RoleType.role1, "TS_militias_jungle_A", "AKBullets", playerPositions.Find("position1")));
-        roleDataDict.Add(RoleType.role2, new RoleData(RoleType.role2, "TS_militias_jungle_D", "AKBullets", playerPositions.Find("position2")));
+        roleDataDict.Add(RoleType.role2, new RoleData(RoleType.role2, "TS_militias_jungle_D", "AKBullets1", playerPositions.Find("position2")));
     }
     public void SpawnRoles()
     {
@@ -69,10 +70,24 @@ public class Player : BaseManager
         RoleType rt = currentRoleGameObject.GetComponent<PlayerInfo>().roleType;
         RoleData rd = GetRoleData(rt);
         playerattack.AkBulletPrefab = rd.BulletPrefab;
+        playerattack.SetPlayerMng(this);
      }
     public void CreateSyncRequest() {
         playerSyncRequest = new GameObject("PlayerSyncRequest");
         playerSyncRequest.AddComponent<MoveRequest>().SetLocalPlayer(currentRoleGameObject.transform, currentRoleGameObject.GetComponent<PlayerMove>())
             .SetRemotePlayer(remoteRoleGameobject.transform);
+        shootReuqest = playerSyncRequest.AddComponent<ShootRequest>();
+        shootReuqest.playerMng = this;
+    }
+    public void Shoot(GameObject AkBulletPrefab, Vector3 pos, Quaternion rotation) {
+        GameObject.Instantiate(AkBulletPrefab, pos, rotation);
+        shootReuqest.SendRequest(AkBulletPrefab.GetComponent<Bullets>().roleType, pos, rotation.eulerAngles);
+    }
+    public void RemoteShoot(RoleType rt, Vector3 pos, Vector3 rotation) {
+
+        GameObject AKBulletPrefab = GetRoleData(rt).BulletPrefab;
+        Transform transform = GameObject.Instantiate(AKBulletPrefab).GetComponent<Transform>();
+        transform.position = pos;
+        transform.eulerAngles = rotation;
     }
 }
