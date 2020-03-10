@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
                     shootDir  = targetPoint - transform.position;
                     transform.rotation = Quaternion.LookRotation(shootDir);
                     anim.SetTrigger("Attack");
-                    Invoke("Shoot", 0.5f);
+                    Invoke("Shoot", 0.1f);
                     
                 }
             }

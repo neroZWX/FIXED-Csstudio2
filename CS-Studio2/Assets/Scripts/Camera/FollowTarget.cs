@@ -8,7 +8,7 @@ public class FollowTarget : MonoBehaviour
     //private Vector3 offset = new Vector3(0, 11f, -9f);
     [SerializeField] private Vector3 offset = new Vector3(0, 13f, -8f);
     private Quaternion cameraRotation = Quaternion.Euler(50f, 0, 0);
-    private float smoothing = 2;
+    private float smoothing = 0.5f;
     // Update is called once per frame
 
     private bool lerping = false;
@@ -22,14 +22,16 @@ public class FollowTarget : MonoBehaviour
         transform.rotation = cameraRotation;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (lerping)
         {
             float timeSinceStarted = Time.time - lerpStartTime;
             float t = timeSinceStarted / timeForLerp;
+            targetPosition = target.position + offset;
 
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+            transform.position = Vector3.Slerp(startPosition, targetPosition, smoothing);
 
             if (t >= 1f)
             {
@@ -48,3 +50,6 @@ public class FollowTarget : MonoBehaviour
         }
     }
 }
+
+
+

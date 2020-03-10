@@ -72,7 +72,7 @@ public class GameFacade : MonoBehaviour
         uiMng.Update();
         audio.Update();
         player.Update();
-        camera.Update();
+       camera.Update();
         clinetMng.Update();
         requestMng.Update();
     }

@@ -9,7 +9,7 @@ namespace GameServer.Tool
 {
     class ConnHelper
     {
-        public const string connectionstring = "datasource= edgu.lt; database=cs-studio2; user=nero; pwd=971370106";
+        public const string connectionstring = "datasource= void.engineer; database=cs-studio2; user=cs-studio2; pwd=971370106";
         public static MySqlConnection Connect() {
             MySqlConnection conn = new MySqlConnection(connectionstring);
             try
