@@ -9,6 +9,9 @@ public class SinglePlayerController : MonoBehaviour
 
     private float speed = 6;
     private Animator anim;
+    Vector3 mousePos;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +19,10 @@ public class SinglePlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        //Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+       
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Grounded") == false) return;
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -32,5 +37,16 @@ public class SinglePlayerController : MonoBehaviour
             forward = res;
             anim.SetFloat("Forward", res);
         }
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 10));
+        print(mousePos);
+        //mousePos.Normalize();
+
     }
+    //void LateUpdate()
+    //{
+     
+    //    Vector3 LookDir = mousePos - transform.position;
+    //    float rotationY = Mathf.Atan2(LookDir.y, LookDir.x) * Mathf.Rad2Deg - 90f;
+    //    transform.rotation = Quaternion.Euler(0, rotationY, 0);
+    //}
 }
