@@ -19,7 +19,7 @@ public class SinglePlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
        
@@ -38,15 +38,33 @@ public class SinglePlayerController : MonoBehaviour
             anim.SetFloat("Forward", res);
         }
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 10));
-        print(mousePos);
+        //Camera.main.screen
+        //print(mousePos);
         //mousePos.Normalize();
 
     }
-    //void LateUpdate()
-    //{
-     
-    //    Vector3 LookDir = mousePos - transform.position;
-    //    float rotationY = Mathf.Atan2(LookDir.y, LookDir.x) * Mathf.Rad2Deg - 90f;
-    //    transform.rotation = Quaternion.Euler(0, rotationY, 0);
-    //}
+    void LateUpdate()
+    {
+
+        //Vector3 LookDir = (transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        // print("lookdir: " + LookDir);
+        //print("screen2worl: " + Input.mousePosition);// Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        //float rotationY = Mathf.Atan2(LookDir.y, LookDir.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(0, rotationY + 90f, 0);
+
+        Vector3 dir = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
+        print(dir);
+        float rot = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        print(rot);
+        transform.rotation = Quaternion.Euler(0f, rot + 180f, 0f);
+        print(transform.rotation);
+
+
+        //Debug.Log(rotationY);
+        //Debug.Log(Quaternion.Euler(0, rotationY + 90f, 0));
+    }
+
+   
 }

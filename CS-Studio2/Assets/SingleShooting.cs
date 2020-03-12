@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class SingleShooting : MonoBehaviour
@@ -11,7 +12,8 @@ public class SingleShooting : MonoBehaviour
     public GameObject PistoalPrefab;
     public float PistolSpeed = 50f;
     public int PistolBulletNum = 50;
-    public Text PistolBulletNumText;
+    //public Text PistolBulletNumText;
+    public TextMeshProUGUI PistolBulletNumText;
     float PistolDamage = 10f;
 
      void Update()
@@ -33,7 +35,7 @@ public class SingleShooting : MonoBehaviour
             rb.AddForce(firePoint.right * PistolSpeed, ForceMode.Impulse);
            
             PistolBulletNum = PistolBulletNum - 1;
-            PistolBulletNumText.text = " " + PistolBulletNum;
+            PistolBulletNumText.text= ""+PistolBulletNum;
         }
 
     }
