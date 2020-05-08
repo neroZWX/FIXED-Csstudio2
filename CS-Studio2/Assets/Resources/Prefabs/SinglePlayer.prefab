@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 965932963806485383}
   - component: {fileID: 2795443713722096026}
   - component: {fileID: 682171765}
-  - component: {fileID: 381152849927267772}
+  - component: {fileID: 1075946966660766045}
   m_Layer: 0
   m_Name: SinglePlayer
   m_TagString: Player
@@ -747,7 +747,7 @@ MonoBehaviour:
   PistolSpeed: 20
   PistolBulletNum: 50
   PistolBulletNumText: {fileID: 0}
---- !u!114 &381152849927267772
+--- !u!114 &1075946966660766045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

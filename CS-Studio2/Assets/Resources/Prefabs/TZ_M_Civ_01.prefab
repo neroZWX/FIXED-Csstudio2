@@ -2391,7 +2391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b59b02d251ea974e860ca1d1b44dbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 8196186809235711002, guid: c7151b73bd680654eb2e9b462e1b5820, type: 3}
+  EnemyWalkersDamage: 10
 --- !u!114 &7883841139326559272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,6 +2407,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HpBar: {fileID: 8600425049500187623}
   EnemyHp: 100
+  numDropItemMin: 1
+  numDropItemMax: 3
+  pickupBullets: {fileID: 3992282515600944077, guid: 84392f63791e2594284fc1c5a6a0f611,
+    type: 3}
+  pickupHP: {fileID: 7657021926003518749, guid: ccd3790ad5de8004abe7436c1f44e862,
+    type: 3}
+  obj: {fileID: 0}
 --- !u!1 &8590078458675164259
 GameObject:
   m_ObjectHideFlags: 0
