@@ -19,29 +19,31 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(Player.transform.position, transform.position);
-        if (distance < 10f && distance > 3f)
+        if (Player != null)
         {
-            
-            an.SetBool("CanSeeCh", true);
-            gameObject.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
-        }
-        else if (distance <= 3f)
-        {
-            rg.constraints = RigidbodyConstraints.FreezePosition;
-            an.SetBool("CanSeeCh", false);
-            an.SetTrigger("Attack");
-            
-            
+            float distance = Vector3.Distance(Player.transform.position, transform.position);
+            if (distance < 30f && distance > 3f)
+            {
 
-        }
-        else
-        {
-            an.SetBool("CanSeeCh", false);
-      
-        }
-        
-        
+                an.SetBool("CanSeeCh", true);
+                gameObject.GetComponent<NavMeshAgent>().SetDestination(Player.transform.position);
+            }
+            else if (distance <= 5f)
+            {
+                rg.constraints = RigidbodyConstraints.FreezePosition;
+                an.SetBool("CanSeeCh", false);
+                an.SetTrigger("Attack");
+
+
+
+            }
+            else
+            {
+                an.SetBool("CanSeeCh", false);
+
+            }
+
+        }   
     }
       void OnCollisionEnter(Collision collision)
         {

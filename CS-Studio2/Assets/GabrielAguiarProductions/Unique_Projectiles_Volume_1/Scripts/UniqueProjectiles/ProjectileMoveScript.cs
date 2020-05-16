@@ -57,7 +57,7 @@ public class ProjectileMoveScript : MonoBehaviour {
 		}
 
 		if (shotSFX != null && GetComponent<AudioSource>()) {
-			GetComponent<AudioSource> ().PlayOneShot (shotSFX);
+			GetComponent<AudioSource> ().PlayOneShot (shotSFX,1f);
 		}
 	}
 
@@ -70,13 +70,19 @@ public class ProjectileMoveScript : MonoBehaviour {
 		EnemyHP enhp = co.transform.GetComponent<EnemyHP>();
 		if (co.transform.tag == "Enemy")
 		{
+			collided = true;
 			enhp.TakeDamage(PistolDamage);
+			if (shotSFX != null && GetComponent<AudioSource>())
+			{
+				GetComponent<AudioSource>().PlayOneShot(hitSFX, 1f);
+			}
+			//Destroy(muzzlePrefab, 5f);
 		}
 		if (co.gameObject.tag != "Bullet" && !collided) {
 			collided = true;
 			
 			if (shotSFX != null && GetComponent<AudioSource>()) {
-				GetComponent<AudioSource> ().PlayOneShot (hitSFX);
+				//GetComponent<AudioSource> ().PlayOneShot (hitSFX,3f);
 			}
 
 			if (trails.Count > 0) {

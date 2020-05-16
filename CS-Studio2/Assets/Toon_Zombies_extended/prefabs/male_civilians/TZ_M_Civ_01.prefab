@@ -682,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  EnemyWalkersDamage: 10
 --- !u!114 &1900256699659010281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +697,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HpBar: {fileID: 30627838780808998}
   EnemyHp: 100
+  numDropItemMin: 1
+  numDropItemMax: 3
+  pickupBullets: {fileID: 0}
+  pickupHP: {fileID: 0}
+  obj: {fileID: 0}
 --- !u!1 &105044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,7 +7383,7 @@ RectTransform:
   m_GameObject: {fileID: 2952270257823940530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.020331832, y: 0.0015103496, z: 1}
+  m_LocalScale: {x: -0.009073893, y: 0.0011541487, z: 1}
   m_Children: []
   m_Father: {fileID: 8270092835147605568}
   m_RootOrder: 1
@@ -7449,7 +7455,7 @@ RectTransform:
   m_GameObject: {fileID: 4884501058837174147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.012719179, y: 0.012322429, z: 0.81433}
+  m_LocalScale: {x: 0.0056614336, y: 0.008025475, z: 0.81433}
   m_Children:
   - {fileID: 4138503786078769906}
   - {fileID: 4346006737197964058}
@@ -7657,7 +7663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.721}
+  m_AnchoredPosition: {x: 0, y: 1.68}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7370161643380529958

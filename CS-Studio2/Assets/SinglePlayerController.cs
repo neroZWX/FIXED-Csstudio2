@@ -55,11 +55,11 @@ public class SinglePlayerController : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0, rotationY + 90f, 0);
 
         Vector3 dir = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
-        print(dir);
+        //print(dir);
         float rot = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        print(rot);
+        //print(rot);
         transform.rotation = Quaternion.Euler(0f, rot + 180f, 0f);
-        print(transform.rotation);
+        //print(transform.rotation);
 
 
         //Debug.Log(rotationY);

@@ -15,7 +15,10 @@ public class SingleCameraFollow : MonoBehaviour
     }
     void LateUpdate()
     {
-        Vector3 targetPos = target.position + cameraOffset;
-        transform.position = Vector3.Slerp(transform.position, targetPos, Smooth);
+        if (target != null)
+        {
+            Vector3 targetPos = target.position + cameraOffset;
+            transform.position = Vector3.Slerp(transform.position, targetPos, Smooth);
+        }
     }
 }

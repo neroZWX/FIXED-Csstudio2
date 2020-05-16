@@ -12,12 +12,14 @@ public class EnemyHP : MonoBehaviour
     public GameObject pickupBullets;
     public GameObject pickupHP;
     private float currentHp;
+ 
    // public float EnemyWalkersDamage = 10f;
     public SkinnedMeshRenderer obj;
   
 
     private void Start()
     {
+       
         currentHp = EnemyHp;
         obj = GetComponent<SkinnedMeshRenderer>();
        

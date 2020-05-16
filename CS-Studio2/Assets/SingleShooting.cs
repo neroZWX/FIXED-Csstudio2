@@ -32,12 +32,12 @@ public class SingleShooting : MonoBehaviour
             GameObject PistoalPre = Instantiate(PistoalPrefab, firePoint.position, firePoint.rotation);
             Rigidbody rb = PistoalPre.GetComponent<Rigidbody>();
             
-            rb.AddForce(firePoint.right * PistolSpeed, ForceMode.Impulse);
+            rb.AddForce(firePoint.right * PistolSpeed,ForceMode.Impulse);
            
             PistolBulletNum = PistolBulletNum - 1;
             PistolBulletNumText.text= ""+PistolBulletNum;
         }
-
+       // Destroy(PistoalPrefab, 5f);
     }
     
 }

@@ -2409,10 +2409,9 @@ MonoBehaviour:
   EnemyHp: 100
   numDropItemMin: 1
   numDropItemMax: 3
-  pickupBullets: {fileID: 3992282515600944077, guid: 84392f63791e2594284fc1c5a6a0f611,
+  pickupBullets: {fileID: 6179465006233536339, guid: 84392f63791e2594284fc1c5a6a0f611,
     type: 3}
-  pickupHP: {fileID: 7657021926003518749, guid: ccd3790ad5de8004abe7436c1f44e862,
-    type: 3}
+  pickupHP: {fileID: 977625464383174340, guid: ccd3790ad5de8004abe7436c1f44e862, type: 3}
   obj: {fileID: 0}
 --- !u!1 &8590078458675164259
 GameObject:
